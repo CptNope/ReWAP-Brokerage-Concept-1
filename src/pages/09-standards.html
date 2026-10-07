@@ -1,0 +1,201 @@
+<!--
+title: Build Standards
+slug: standards
+num: 09
+description: Build standards for the REWAP website: WCAG 2.2 AA, performance budgets, separated platform layers, a vendor-neutral IDX adapter, the brokerage-team-agent data model, URLs, structured data and WordPress mapping.
+-->
+<header class="opener">
+  <div class="wrap grid">
+    <p class="opener-num" aria-hidden="true">09</p>
+    <div class="opener-head">
+      <h1>Build Standards</h1>
+      <p class="lead">The rules the website must be built to. Internal: visitors never see this chapter’s ideas, only their results.</p>
+    </div>
+    <div class="opener-aside"><ul class="toc-inline" aria-label="On this page">
+      <li><a href="#a11y">Accessibility</a></li><li><a href="#perf">Performance</a></li><li><a href="#layers">Platform layers</a></li><li><a href="#idx-contract">IDX adapter</a></li>
+      <li><a href="#model">Data model</a></li><li><a href="#urls">URLs and search</a></li><li><a href="#schema">Structured data</a></li><li><a href="#wp">WordPress</a></li><li><a href="#compliance">Compliance</a></li></ul></div>
+  </div>
+</header>
+
+<section class="section" id="a11y" aria-labelledby="a11y-h">
+  <div class="wrap">
+    <div class="section-head"><span class="code">9.1</span><h2 id="a11y-h">Accessibility: WCAG 2.2 AA</h2><p>A launch requirement, tested on the search and listing flows first because they are the hardest.</p></div>
+    <ul class="spec-list">
+      <li><b>Keyboard</b><span>Every control reachable and operable in a logical order; visible 2 px focus everywhere (2.4.7, 2.4.11). Skip link on every page.</span></li>
+      <li><b>Dialogs and sheets</b><span>Native <code>&lt;dialog&gt;</code> where possible; focus moves in, is contained, Escape closes, focus returns to the trigger.</span></li>
+      <li><b>Search</b><span>Combobox pattern for location suggestions; result-count changes announced with a polite live region; the list is the accessible equivalent of the map.</span></li>
+      <li><b>Forms</b><span>Visible labels, <code>autocomplete</code> tokens, errors linked with <code>aria-describedby</code> and summarised at the top on submit (3.3.1–3.3.3). No CAPTCHA puzzles (3.3.8).</span></li>
+      <li><b>Targets</b><span>At least 44 × 44 px; never below the 24 × 24 px minimum (2.5.8). Dragging on the map always has a non-drag alternative (2.5.7).</span></li>
+      <li><b>Contrast</b><span>Pairs from 3.6 only. Text on photographs only over a solid field.</span></li>
+      <li><b>Media</b><span>Listing photos get alt text from room and feature data (“Kitchen with gas range and window over the sink”), never “image 1.” Virtual tours offer a text summary.</span></li>
+      <li><b>Motion</b><span>Reduced-motion respected (8.5); nothing flashes; no auto-advancing content.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="section alt" id="perf" aria-labelledby="perf-h">
+  <div class="wrap">
+    <div class="section-head"><span class="code">9.2</span><h2 id="perf-h">Performance budget</h2><p>Measured at the 75th percentile on a mid-range phone over 4G.</p></div>
+    <div class="scroll-x"><table class="data-table"><thead><tr><th scope="col">Metric</th><th scope="col" class="r">Budget</th><th scope="col">How</th></tr></thead><tbody>
+      <tr><td>Largest Contentful Paint</td><td class="r num">≤ 2.0 s</td><td>Hero image preloaded with <code>fetchpriority="high"</code>, AVIF/WebP sources, server-rendered listing data</td></tr>
+      <tr><td>Interaction to Next Paint</td><td class="r num">≤ 150 ms</td><td>No framework on content pages; search JS split and deferred</td></tr>
+      <tr><td>Cumulative Layout Shift</td><td class="r num">≤ 0.05</td><td>Fixed aspect ratios on every image and map; fonts with metric-matched fallbacks</td></tr>
+      <tr><td>Fonts</td><td class="r num">≤ 130 KB</td><td>Three WOFF2 files, Latin subset, self-hosted, <code>font-display: swap</code></td></tr>
+      <tr><td>JavaScript, content pages</td><td class="r num">≤ 30 KB</td><td>Progressive enhancement; every page usable without it</td></tr>
+      <tr><td>JavaScript, search</td><td class="r num">≤ 180 KB</td><td>Map library loaded on interaction or when the map view is chosen</td></tr>
+    </tbody></table></div>
+  </div>
+</section>
+
+<section class="section" id="layers" aria-labelledby="layers-h">
+  <div class="wrap">
+    <div class="section-head"><span class="code">9.3</span><h2 id="layers-h">Platform layers</h2>
+      <p>Built for REWAP, separated as if it were the first of many brokerages. Each layer can change without touching the others; none of this appears in the interface.</p></div>
+    <div class="scroll-x"><table class="data-table"><thead><tr><th scope="col">Layer</th><th scope="col">Owns</th><th scope="col">Never knows about</th></tr></thead><tbody>
+      <tr><td><b>Brand</b></td><td>Tokens, fonts, logo set, theme.json styles</td><td>Any brokerage’s data</td></tr>
+      <tr><td><b>Content</b></td><td>Pages, guides, community pages, market updates (block patterns)</td><td>Which IDX vendor is active</td></tr>
+      <tr><td><b>Brokerage</b></td><td>Legal name, license, offices, disclosures, principal broker</td><td>Presentation</td></tr>
+      <tr><td><b>People</b></td><td>Brokers and agents: license, role, contact, team membership</td><td>Listing feed internals</td></tr>
+      <tr><td><b>Teams</b></td><td>Team name, own mark, members, routing preferences</td><td>Brand tokens (teams keep theirs)</td></tr>
+      <tr><td><b>Property</b></td><td>Normalised listing records (9.4), media, open houses</td><td>Vendor field names</td></tr>
+      <tr><td><b>IDX adapter</b></td><td>Fetching, mapping and caching one vendor’s feed into the Property schema</td><td>Templates</td></tr>
+      <tr><td><b>Lead routing</b></td><td>Rules: listing agent → team → brokerage fallback; round robin; office hours</td><td>CRM specifics</td></tr>
+      <tr><td><b>CRM adapter</b></td><td>Pushing leads and events to the chosen CRM</td><td>Page design</td></tr>
+      <tr><td><b>Analytics</b></td><td>Consent-aware events: search, save, contact, call</td><td>Personal data beyond consent</td></tr>
+      <tr><td><b>Compliance</b></td><td>Disclosures, Fair Housing, MLS attribution and display rules, privacy, cookie consent</td><td>Nothing: every template must include it</td></tr>
+    </tbody></table></div>
+  </div>
+</section>
+
+<section class="section alt" id="idx-contract" aria-labelledby="idx-contract-h">
+  <div class="wrap">
+    <div class="section-head"><span class="code">9.4</span><h2 id="idx-contract-h">IDX adapter contract</h2>
+      <p>Templates read only this shape. A new vendor means one new adapter class, not new templates. Field names follow the RESO Data Dictionary where one exists.</p></div>
+    <pre class="code-block" tabindex="0" aria-label="IDX adapter interface"><code>interface ListingProvider {
+  search(query: ListingQuery): Promise&lt;Page&lt;Listing&gt;&gt;;
+  get(listingKey: string): Promise&lt;Listing | null&gt;;
+  openHouses(range: DateRange, area?: AreaRef): Promise&lt;OpenHouse[]&gt;;
+  areas(prefix: string): Promise&lt;AreaRef[]&gt;;       // towns, neighborhoods, ZIPs
+  attribution(listing: Listing): Attribution;     // MLS + listing office text, logo rules
+  freshness(): Promise&lt;{ updatedAt: string }&gt;;    // shown on every results view
+}
+
+type Listing = {
+  listingKey: string; mlsNumber: string;
+  status: 'Active' | 'ActiveUnderContract' | 'Pending' | 'Closed' | 'ComingSoon';
+  listPrice: number; closePrice?: number;
+  address: { street: string; unit?: string; city: string; state: 'MA'; postalCode: string };
+  geo?: { lat: number; lng: number };
+  propertyType: 'Residential' | 'MultiFamily' | 'Condo' | 'Land' | 'Commercial';
+  bedrooms?: number; bathroomsTotal?: number; livingArea?: number; lotSizeAcres?: number;
+  yearBuilt?: number; units?: number; taxAnnual?: { amount: number; year: number };
+  media: { url: string; width: number; height: number; caption?: string }[];
+  remarks?: string;
+  listOffice: { name: string; id: string }; listAgent?: { name: string; id: string };
+  isOwnListing: boolean;   // true when listOffice is REWAP or an affiliated team
+  updatedAt: string;
+};</code></pre>
+  </div>
+</section>
+
+<section class="section" id="model" aria-labelledby="model-h">
+  <div class="wrap">
+    <div class="section-head"><span class="code">9.5</span><h2 id="model-h">Brokerage data model</h2>
+      <p>Affiliation is a relationship, not a hierarchy baked into URLs, so a team can move or a second brokerage can join without rewriting pages.</p></div>
+    <figure class="plate"><div class="plate-ground light" style="padding:clamp(1rem,3vw,3rem)">
+      <svg viewBox="0 0 760 300" role="img" aria-labelledby="dm-t dm-d" style="width:100%;max-width:52rem">
+        <title id="dm-t">Entity relationships</title>
+        <desc id="dm-d">A brokerage has many offices, brokers and teams. Brokers and agents are people with roles. A team belongs to one brokerage and has many members. Listings reference a listing person and optionally a team, and sit in communities.</desc>
+        <g font-family="Public Sans, sans-serif" font-size="13" fill="#0C1827">
+          <g fill="#FAFAF9" stroke="#17283F"><rect x="20" y="120" width="140" height="56"/><rect x="230" y="30" width="130" height="56"/><rect x="230" y="210" width="130" height="56"/><rect x="430" y="120" width="130" height="56"/><rect x="620" y="30" width="120" height="56"/><rect x="620" y="210" width="120" height="56"/></g>
+          <text x="90" y="153" text-anchor="middle" font-weight="600">Brokerage</text>
+          <text x="295" y="63" text-anchor="middle" font-weight="600">Team</text>
+          <text x="295" y="243" text-anchor="middle" font-weight="600">Person</text>
+          <text x="495" y="153" text-anchor="middle" font-weight="600">Listing</text>
+          <text x="680" y="63" text-anchor="middle" font-weight="600">Community</text>
+          <text x="680" y="243" text-anchor="middle" font-weight="600">Lead</text>
+          <g fill="none" stroke="#AD7E50" stroke-width="1.4"><path d="M160 140L230 66M160 156L230 230M295 86V210M360 58L430 136M360 238L430 160M560 140L620 66M560 160L620 230"/></g>
+          <g fill="#545C66" font-size="11"><text x="168" y="96">has teams</text><text x="168" y="214">employs</text><text x="302" y="152">members, role</text><text x="372" y="88">listed by</text><text x="372" y="214">listed by</text><text x="566" y="92">located in</text><text x="566" y="214">routes to</text></g>
+        </g>
+      </svg></div>
+      <figcaption class="caption"><span class="caption-title">Entity relationships</span><span class="caption-meta">Person roles: principal broker, broker, agent, staff. Brokerage → The Oberdorfer Group → Brandon Oberdorfer, Broker.</span></figcaption></figure>
+  </div>
+</section>
+
+<section class="section alt" id="urls" aria-labelledby="urls-h">
+  <div class="wrap">
+    <div class="section-head"><span class="code">9.6</span><h2 id="urls-h">URLs and search visibility</h2>
+      <p>Pages exist to answer real questions people ask about Massachusetts real estate, for search engines and answer engines alike. Value before keywords.</p></div>
+    <div class="scroll-x"><table class="data-table"><thead><tr><th scope="col">Path</th><th scope="col">Page</th><th scope="col">Answers</th></tr></thead><tbody>
+      <tr><td><code>/buy/</code></td><td>Buying with REWAP</td><td>How buying works in Massachusetts, step by step, with the legal milestones</td></tr>
+      <tr><td><code>/sell/</code></td><td>Selling with REWAP</td><td>Pricing, preparation, the P&amp;S, closing</td></tr>
+      <tr><td><code>/invest/</code></td><td>Investment advice</td><td>Multi-family, rent rolls, financing structures</td></tr>
+      <tr><td><code>/search/</code></td><td>Property search</td><td>Map and list; filters reflected in the query string</td></tr>
+      <tr><td><code>/homes/{town}-ma/{address-slug}-{mls}/</code></td><td>Listing detail</td><td>Stable even if status changes; sold listings follow MLS display rules</td></tr>
+      <tr><td><code>/communities/{region}/{town}/</code></td><td>Community guide</td><td>Housing stock, transit, schools data with sources, market snapshot</td></tr>
+      <tr><td><code>/market/{yyyy}/{mm}/</code></td><td>Market update</td><td>Monthly figures with method and source</td></tr>
+      <tr><td><code>/guides/{slug}/</code></td><td>Guides</td><td>Buying a home in Worcester, selling in Massachusetts, contingencies explained</td></tr>
+      <tr><td><code>/teams/{slug}/</code> · <code>/people/{slug}/</code></td><td>Teams and people</td><td>Who they are, under which brokerage, their listings</td></tr>
+    </tbody></table></div>
+    <ul class="spec-list mt-7">
+      <li><b>Answer-ready</b><span>Each guide opens with a two-sentence answer, then the detail. Questions as headings where natural; FAQ blocks only where questions are real.</span></li>
+      <li><b>Sourced</b><span>Every market figure carries its source and date in the caption. Generative engines cite pages that cite.</span></li>
+      <li><b>Equal regions</b><span>Community coverage is planned by region, so no part of the state is thin.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="section" id="schema" aria-labelledby="schema-h">
+  <div class="wrap">
+    <div class="section-head"><span class="code">9.7</span><h2 id="schema-h">Structured data</h2>
+      <p>Schema.org JSON-LD generated from the data layers, never hand-written per page.</p></div>
+    <div class="scroll-x"><table class="data-table"><thead><tr><th scope="col">Page</th><th scope="col">Types</th></tr></thead><tbody>
+      <tr><td>Site-wide</td><td><code>RealEstateAgent</code> (the brokerage) with <code>PostalAddress</code>, <code>areaServed</code> = Massachusetts; <code>WebSite</code> with <code>SearchAction</code></td></tr>
+      <tr><td>Person, team</td><td><code>Person</code> with <code>worksFor</code>; team as <code>Organization</code> with <code>parentOrganization</code></td></tr>
+      <tr><td>Listing</td><td><code>SingleFamilyResidence</code> / <code>Apartment</code> / <code>House</code> with <code>Offer</code> (price, availability), <code>Place</code>, <code>ImageObject</code></td></tr>
+      <tr><td>Community</td><td><code>Place</code> with <code>containedInPlace</code>; <code>BreadcrumbList</code></td></tr>
+      <tr><td>Guide, market update</td><td><code>Article</code> with author, dates, <code>citation</code>; <code>FAQPage</code> only for real Q&amp;A</td></tr>
+    </tbody></table></div>
+    <pre class="code-block mt-7" tabindex="0" aria-label="Sample organization JSON-LD"><code>{
+  "@context": "https://schema.org",
+  "@type": "RealEstateAgent",
+  "name": "REWAP Brokerage LLC",
+  "url": "https://rewapbrokerage.com/",
+  "telephone": "+1-508-509-7759",
+  "address": { "@type": "PostalAddress", "streetAddress": "652 Park Ave",
+               "addressLocality": "Worcester", "addressRegion": "MA", "postalCode": "01603", "addressCountry": "US" },
+  "areaServed": { "@type": "State", "name": "Massachusetts" },
+  "founder": { "@type": "Person", "name": "Hong Tran", "jobTitle": "Founder, Real Estate Lawyer" },
+  "subOrganization": { "@type": "Organization", "name": "The Oberdorfer Group" }
+}</code></pre>
+  </div>
+</section>
+
+<section class="section alt" id="wp" aria-labelledby="wp-h">
+  <div class="wrap">
+    <div class="section-head"><span class="code">9.8</span><h2 id="wp-h">WordPress translation</h2>
+      <p>The production site is a block theme. This book maps onto it directly, with native features first and the fewest plugins possible.</p></div>
+    <ul class="spec-list">
+      <li><b>theme.json</b><span>Palette, type scale, spacing and layout widths from <a href="{{root}}tokens/theme.json">tokens/theme.json</a> (draft). Editors pick only from the palette.</span></li>
+      <li><b>Patterns</b><span>Each composition in 6.4 and component in chapter 7 becomes a locked block pattern: Index, Plate, Statement, Catalogue, Ledger, CTA.</span></li>
+      <li><b>Content types</b><span>Custom post types for Person, Team, Community and Market Update; taxonomies for Region and Town. Listings stay in the IDX layer, cached, not as posts.</span></li>
+      <li><b>IDX</b><span>The vendor plugin supplies data only; its widgets are not used. A small REWAP plugin implements the adapter (9.4) and renders with the theme’s blocks.</span></li>
+      <li><b>Hosting</b><span>Cloudways, with page caching for content and short-lived object caching for listing queries.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="section" id="compliance" aria-labelledby="compliance-h">
+  <div class="wrap">
+    <div class="section-head"><span class="code">9.9</span><h2 id="compliance-h">Compliance surfaces</h2>
+      <p>Designed in from the start, styled as content (7.10), and reviewed by Hong Tran before launch. This list is a checklist, not legal advice.</p></div>
+    <ul class="spec-list">
+      <li><b>Agency disclosure</b><span>The Massachusetts Mandatory Licensee-Consumer Relationship Disclosure, linked from every contact point.</span></li>
+      <li><b>Fair Housing</b><span>Equal Housing Opportunity statement and logo in the footer; language rules in 1.9 and 5.1.</span></li>
+      <li><b>MLS display rules</b><span>Listing office attribution, data-currency notice and disclaimer on every listing view, per the MLS’s IDX rules.</span></li>
+      <li><b>Brokerage identification</b><span>Legal name and office address on every page.</span></li>
+      <li><b>Privacy</b><span>Privacy policy, consent before non-essential analytics, clear opt-in for listing alerts and texts.</span></li>
+      <li><b>Accessibility statement</b><span>Published with a contact route for problems.</span></li>
+    </ul>
+  </div>
+</section>

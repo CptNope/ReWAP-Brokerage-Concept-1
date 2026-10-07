@@ -1,0 +1,364 @@
+{
+ "colors": {
+  "night": {
+   "oklch": "oklch(20.5% 0.035 256)",
+   "hex": "#0C1827",
+   "rgb": [
+    12,
+    24,
+    39
+   ],
+   "role": "Deepest navy; text on light, dark fields"
+  },
+  "navy": {
+   "oklch": "oklch(27.5% 0.048 256)",
+   "hex": "#17283F",
+   "rgb": [
+    23,
+    40,
+    63
+   ],
+   "role": "Registry Navy \u2014 primary; from the mark's W"
+  },
+  "navy-700": {
+   "oklch": "oklch(34.5% 0.052 256)",
+   "hex": "#273A54",
+   "rgb": [
+    39,
+    58,
+    84
+   ],
+   "role": "Navy hover / pressed"
+  },
+  "navy-500": {
+   "oklch": "oklch(48.0% 0.045 256)",
+   "hex": "#4D5F77",
+   "rgb": [
+    77,
+    95,
+    119
+   ],
+   "role": "Info, secondary UI on light"
+  },
+  "navy-200": {
+   "oklch": "oklch(86.0% 0.018 256)",
+   "hex": "#C9D2DD",
+   "rgb": [
+    201,
+    210,
+    221
+   ],
+   "role": "Tint, selected rows"
+  },
+  "navy-100": {
+   "oklch": "oklch(93.5% 0.010 256)",
+   "hex": "#E5EAF0",
+   "rgb": [
+    229,
+    234,
+    240
+   ],
+   "role": "Faint tint"
+  },
+  "bronze-700": {
+   "oklch": "oklch(48.0% 0.075 62)",
+   "hex": "#7C532E",
+   "rgb": [
+    124,
+    83,
+    46
+   ],
+   "role": "Bronze Deep \u2014 the only bronze allowed as text on light"
+  },
+  "bronze": {
+   "oklch": "oklch(63.0% 0.085 65)",
+   "hex": "#AD7E50",
+   "rgb": [
+    173,
+    126,
+    80
+   ],
+   "role": "Bronze \u2014 the mark's flat color; rules and large marks only"
+  },
+  "bronze-300": {
+   "oklch": "oklch(79.0% 0.070 70)",
+   "hex": "#D8B38A",
+   "rgb": [
+    216,
+    179,
+    138
+   ],
+   "role": "Bronze Light \u2014 accents and text on navy"
+  },
+  "bronze-100": {
+   "oklch": "oklch(93.5% 0.025 75)",
+   "hex": "#F4E8D8",
+   "rgb": [
+    244,
+    232,
+    216
+   ],
+   "role": "Bronze tint"
+  },
+  "gallery": {
+   "oklch": "oklch(98.5% 0.002 90)",
+   "hex": "#FAFAF9",
+   "rgb": [
+    250,
+    250,
+    249
+   ],
+   "role": "Gallery \u2014 page ground"
+  },
+  "plaster": {
+   "oklch": "oklch(96.2% 0.004 85)",
+   "hex": "#F4F2EF",
+   "rgb": [
+    244,
+    242,
+    239
+   ],
+   "role": "Plaster \u2014 alternate surface"
+  },
+  "limestone": {
+   "oklch": "oklch(91.5% 0.006 85)",
+   "hex": "#E5E3DE",
+   "rgb": [
+    229,
+    227,
+    222
+   ],
+   "role": "Limestone \u2014 strong rule, input border on plaster"
+  },
+  "hairline": {
+   "oklch": "oklch(88.0% 0.006 85)",
+   "hex": "#D9D7D3",
+   "rgb": [
+    217,
+    215,
+    211
+   ],
+   "role": "Hairline \u2014 default 1px rule"
+  },
+  "granite": {
+   "oklch": "oklch(60.0% 0.012 256)",
+   "hex": "#7C8187",
+   "rgb": [
+    124,
+    129,
+    135
+   ],
+   "role": "Granite \u2014 disabled, decorative meta (not body text)"
+  },
+  "slate": {
+   "oklch": "oklch(47.0% 0.020 256)",
+   "hex": "#545C66",
+   "rgb": [
+    84,
+    92,
+    102
+   ],
+   "role": "Slate \u2014 secondary text"
+  },
+  "ink": {
+   "oklch": "oklch(25.5% 0.030 256)",
+   "hex": "#192331",
+   "rgb": [
+    25,
+    35,
+    49
+   ],
+   "role": "Ink \u2014 body text"
+  },
+  "success": {
+   "oklch": "oklch(48.0% 0.090 155)",
+   "hex": "#2C6C47",
+   "rgb": [
+    44,
+    108,
+    71
+   ],
+   "role": "Status: success"
+  },
+  "warning": {
+   "oklch": "oklch(50.0% 0.100 70)",
+   "hex": "#875814",
+   "rgb": [
+    135,
+    88,
+    20
+   ],
+   "role": "Status: warning (text/icon)"
+  },
+  "warning-fill": {
+   "oklch": "oklch(88.0% 0.080 85)",
+   "hex": "#F0D49B",
+   "rgb": [
+    240,
+    212,
+    155
+   ],
+   "role": "Status: warning surface"
+  },
+  "error": {
+   "oklch": "oklch(51.0% 0.165 27)",
+   "hex": "#B1322D",
+   "rgb": [
+    177,
+    50,
+    45
+   ],
+   "role": "Status: error"
+  },
+  "white": {
+   "oklch": "oklch(100.0% 0.000 0)",
+   "hex": "#FFFFFF",
+   "rgb": [
+    255,
+    255,
+    255
+   ],
+   "role": "Pure white for knock-outs"
+  }
+ },
+ "contrast": [
+  {
+   "fg": "ink",
+   "bg": "gallery",
+   "ratio": 15.16,
+   "use": "AA body"
+  },
+  {
+   "fg": "ink",
+   "bg": "plaster",
+   "ratio": 14.17,
+   "use": "AA body"
+  },
+  {
+   "fg": "slate",
+   "bg": "gallery",
+   "ratio": 6.49,
+   "use": "AA body"
+  },
+  {
+   "fg": "slate",
+   "bg": "plaster",
+   "ratio": 6.06,
+   "use": "AA body"
+  },
+  {
+   "fg": "navy",
+   "bg": "gallery",
+   "ratio": 14.24,
+   "use": "AA body"
+  },
+  {
+   "fg": "bronze-700",
+   "bg": "gallery",
+   "ratio": 6.42,
+   "use": "AA body"
+  },
+  {
+   "fg": "bronze-700",
+   "bg": "plaster",
+   "ratio": 6.0,
+   "use": "AA body"
+  },
+  {
+   "fg": "bronze",
+   "bg": "gallery",
+   "ratio": 3.42,
+   "use": "AA large / UI"
+  },
+  {
+   "fg": "granite",
+   "bg": "gallery",
+   "ratio": 3.76,
+   "use": "AA large / UI"
+  },
+  {
+   "fg": "gallery",
+   "bg": "navy",
+   "ratio": 14.24,
+   "use": "AA body"
+  },
+  {
+   "fg": "bronze-300",
+   "bg": "navy",
+   "ratio": 7.6,
+   "use": "AA body"
+  },
+  {
+   "fg": "navy-200",
+   "bg": "navy",
+   "ratio": 9.74,
+   "use": "AA body"
+  },
+  {
+   "fg": "bronze",
+   "bg": "navy",
+   "ratio": 4.16,
+   "use": "AA large / UI"
+  },
+  {
+   "fg": "gallery",
+   "bg": "night",
+   "ratio": 17.1,
+   "use": "AA body"
+  },
+  {
+   "fg": "bronze-300",
+   "bg": "night",
+   "ratio": 9.13,
+   "use": "AA body"
+  },
+  {
+   "fg": "success",
+   "bg": "gallery",
+   "ratio": 6.01,
+   "use": "AA body"
+  },
+  {
+   "fg": "warning",
+   "bg": "gallery",
+   "ratio": 5.85,
+   "use": "AA body"
+  },
+  {
+   "fg": "error",
+   "bg": "gallery",
+   "ratio": 5.98,
+   "use": "AA body"
+  },
+  {
+   "fg": "night",
+   "bg": "warning-fill",
+   "ratio": 12.42,
+   "use": "AA body"
+  },
+  {
+   "fg": "night",
+   "bg": "bronze-100",
+   "ratio": 14.78,
+   "use": "AA body"
+  },
+  {
+   "fg": "hairline",
+   "bg": "gallery",
+   "ratio": 1.38,
+   "use": "decorative only"
+  },
+  {
+   "fg": "limestone",
+   "bg": "gallery",
+   "ratio": 1.23,
+   "use": "decorative only"
+  },
+  {
+   "fg": "slate",
+   "bg": "limestone",
+   "ratio": 5.28,
+   "use": "AA body"
+  }
+ ]
+}

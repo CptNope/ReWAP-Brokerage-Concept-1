@@ -1,0 +1,144 @@
+<!--
+title: Typography
+slug: typography
+num: 04
+description: REWAP's typographic system: Libre Caslon Display and Text with Public Sans, the responsive scale, measure, leading, tracking and property-data setting.
+-->
+<header class="opener">
+  <div class="wrap grid">
+    <p class="opener-num" aria-hidden="true">04</p>
+    <div class="opener-head">
+      <h1>Typography</h1>
+      <p class="lead">The type of founding documents for the voice, the type of public signage for the facts. Two families, three roles, no exceptions.</p>
+    </div>
+    <div class="opener-aside"><ul class="toc-inline" aria-label="On this page">
+      <li><a href="#families">Families</a></li><li><a href="#scale">Scale</a></li><li><a href="#setting">Setting rules</a></li><li><a href="#data">Property data</a></li><li><a href="#pairing">In use</a></li></ul></div>
+  </div>
+</header>
+
+<section class="section" id="families" aria-labelledby="families-h">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="code">4.1</span>
+      <h2 id="families-h">Families and why</h2>
+      <p>Caslon is the typeface of the American founding documents and two centuries of law books; Public Sans was drawn for the United States government’s own web standards. Between them: permanence, law, civic clarity. Both are open-source, so the website, the WordPress theme and every vendor can use them without licensing cost.</p>
+    </div>
+    <div class="type-specimen">
+      <div class="meta"><b>Libre Caslon Display</b><span>Display and headings</span><span>Regular 400 · 30 px and up</span><span>Tracking −0.012em at display sizes</span></div>
+      <div class="sample"><p class="glyphs" style="max-width:none">Real estate, with clarity.</p><p class="glyphs" style="font-size:clamp(1.5rem,1.2rem+1vw,2.25rem);color:var(--c-slate);max-width:none">ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 0123456789 &amp; § ¶ $ %</p></div>
+    </div>
+    <div class="type-specimen">
+      <div class="meta"><b>Libre Caslon Text</b><span>Long-form prose, leads, captions</span><span>Regular 400, Bold 700, Italic</span><span>17 px minimum for body</span></div>
+      <div class="sample stack">
+        <p style="font:400 var(--fs-lead)/1.5 var(--font-text)">A purchase and sale agreement is the moment a buyer’s intentions become obligations. We read it with you, clause by clause, before you sign.</p>
+        <p style="font:italic 400 var(--fs-lead)/1.5 var(--font-text);color:var(--c-slate)">Italic is for captions, titles of works and the occasional emphasis; never for whole paragraphs.</p>
+      </div>
+    </div>
+    <div class="type-specimen">
+      <div class="meta"><b>Public Sans</b><span>Interface, labels, data, forms</span><span>400, 500, 600 · variable 100–900</span><span>Tabular figures for all numbers</span></div>
+      <div class="sample stack">
+        <p style="font:500 1.25rem/1.4 var(--font-ui)">Search 1,284 active listings across Massachusetts</p>
+        <p class="label" style="font-size:.8125rem">Open house · Saturday</p>
+        <p class="data" style="font:500 1.5rem/1.3 var(--font-ui);font-variant-numeric:tabular-nums">$ 489,000 · 3 bd · 2.5 ba · 1,840 sq ft</p>
+        <p class="note">Sample figures for setting only.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section alt" id="scale" aria-labelledby="scale-h">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="code">4.2</span>
+      <h2 id="scale-h">Responsive scale</h2>
+      <p>Fluid between a 360 px phone and a 1440 px display. Each step is a token; components never set a size directly.</p>
+    </div>
+    <div class="stack" style="margin-top:0">
+      <div class="scale-row"><span class="tok"><b>display</b>48 → 96</span><span class="s" style="font:400 var(--fs-display)/1 var(--font-display);letter-spacing:var(--track-display)">With clarity</span></div>
+      <div class="scale-row"><span class="tok"><b>h1</b>40 → 68</span><span class="s" style="font:400 var(--fs-h1)/1.1 var(--font-display)">Selling in Worcester</span></div>
+      <div class="scale-row"><span class="tok"><b>h2</b>30 → 44</span><span class="s" style="font:400 var(--fs-h2)/1.15 var(--font-display)">What the inspection found</span></div>
+      <div class="scale-row"><span class="tok"><b>h3</b>22 → 28</span><span class="s" style="font:600 var(--fs-h3)/1.2 var(--font-text)">Title and closing</span></div>
+      <div class="scale-row"><span class="tok"><b>lead</b>19 → 23</span><span class="s" style="font:400 var(--fs-lead)/1.4 var(--font-text)">A lawyer’s reading of every agreement.</span></div>
+      <div class="scale-row"><span class="tok"><b>body</b>17</span><span class="s" style="font:400 var(--fs-body)/1.6 var(--font-text)">Earnest money is the deposit that shows a seller you are serious.</span></div>
+      <div class="scale-row"><span class="tok"><b>ui</b>16</span><span class="s" style="font:400 var(--fs-ui)/1.4 var(--font-ui)">Save this search and get new listings by email</span></div>
+      <div class="scale-row"><span class="tok"><b>small</b>14</span><span class="s" style="font:400 var(--fs-small)/1.4 var(--font-ui)">Listing courtesy of the listing brokerage. Data updated daily.</span></div>
+      <div class="scale-row"><span class="tok"><b>label</b>12</span><span class="s label">Open house · Saturday</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="setting" aria-labelledby="setting-h">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="code">4.3</span>
+      <h2 id="setting-h">Setting rules</h2>
+      <p>The difference between a template and a firm is mostly here.</p>
+    </div>
+    <div class="scroll-x">
+      <table class="data-table">
+        <thead><tr><th scope="col">Role</th><th scope="col">Face</th><th scope="col" class="r">Leading</th><th scope="col" class="r">Tracking</th><th scope="col">Measure and case</th></tr></thead>
+        <tbody>
+          <tr><td>Display</td><td>Caslon Display 400</td><td class="r">1.00–1.05</td><td class="r">−0.012em</td><td>Up to 12 words; sentence case; balanced wrap</td></tr>
+          <tr><td>Headings h1–h2</td><td>Caslon Display 400</td><td class="r">1.10–1.15</td><td class="r">−0.006em</td><td>Sentence case; never all caps</td></tr>
+          <tr><td>h3</td><td>Caslon Text 600</td><td class="r">1.25</td><td class="r">0</td><td>Sentence case</td></tr>
+          <tr><td>Lead</td><td>Caslon Text 400</td><td class="r">1.45–1.5</td><td class="r">0</td><td>Max 38 characters per line</td></tr>
+          <tr><td>Body</td><td>Caslon Text 400</td><td class="r">1.6</td><td class="r">0</td><td>60–70 characters per line (66ch token)</td></tr>
+          <tr><td>Labels</td><td>Public Sans 600</td><td class="r">1.3</td><td class="r">+0.14em</td><td>All caps; 12 px; never longer than four words</td></tr>
+          <tr><td>Interface</td><td>Public Sans 400–600</td><td class="r">1.4–1.45</td><td class="r">0</td><td>Sentence case for buttons in body; caps only for primary buttons</td></tr>
+          <tr><td>Data</td><td>Public Sans 500, tabular</td><td class="r">1.3</td><td class="r">0</td><td>Right-aligned in tables; thin separators</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <ul class="spec-list mt-7">
+      <li><b>Hierarchy</b><span>Size and the change of family carry hierarchy. Bold is rare: one bold phrase per paragraph at most.</span></li>
+      <li><b>Punctuation</b><span>True apostrophes and quotation marks (’ “ ”), en dashes for ranges (3–4 beds), the multiplication sign for dimensions (12 × 14 ft).</span></li>
+      <li><b>Numbers</b><span>Lining, tabular figures in data; old-style figures are not used. Thousands always take a comma.</span></li>
+      <li><b>Never</b><span>Gradient or outlined type, letter-spaced lowercase, centred body copy, more than three sizes in one component.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="section alt" id="data" aria-labelledby="data-h">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="code">4.4</span>
+      <h2 id="data-h">Property data</h2>
+      <p>Prices are set in Caslon Display: the one number that deserves a voice. Everything else is a fact and is set in Public Sans.</p>
+    </div>
+    <div class="body-cols">
+      <div class="full">
+        <div style="display:grid;gap:var(--s-3);padding:var(--s-6);background:#fff;border:1px solid var(--rule-strong);max-width:40rem">
+          <span class="tag-sample">Sample data</span>
+          <span class="property-price" style="font-size:clamp(2rem,1.5rem+1.6vw,3rem)">$489,000</span>
+          <span class="property-address">41 Example Street, Worcester, MA 01602</span>
+          <span class="property-facts"><span>3 bd</span><span>2.5 ba</span><span>1,840 sq ft</span><span>0.18 ac</span><span>Built 1912</span></span>
+          <table class="data-table" style="margin-top:var(--s-4)">
+            <caption class="sr-only">Sample listing facts</caption>
+            <tbody>
+              <tr><th scope="row">Property tax (FY)</th><td class="r num">$5,412</td></tr>
+              <tr><th scope="row">Price per sq ft</th><td class="r num">$266</td></tr>
+              <tr><th scope="row">Days on market</th><td class="r num">12</td></tr>
+            </tbody>
+          </table>
+          <span class="property-attrib">Listing data courtesy of MLS PIN. Information deemed reliable but not guaranteed.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section on-dark" id="pairing" aria-labelledby="pairing-h">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="code">4.5</span>
+      <h2 id="pairing-h">In use</h2>
+    </div>
+    <div class="body-cols">
+      <div class="full stack">
+        <p style="font:400 var(--fs-display)/1.02 var(--font-display);letter-spacing:var(--track-display);max-width:13ch;color:var(--c-gallery)">Selling a home in Worcester, explained.</p>
+        <p class="lead" style="color:var(--c-navy-200);max-width:44ch">What to do in the six weeks before listing, what the purchase and sale agreement will ask of you, and when the legal work begins.</p>
+        <p class="label" style="color:var(--c-bronze-300)">Guide · 9 minute read</p>
+      </div>
+    </div>
+  </div>
+</section>

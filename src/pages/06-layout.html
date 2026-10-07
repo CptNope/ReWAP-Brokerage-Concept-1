@@ -1,0 +1,127 @@
+<!--
+title: Layout
+slug: layout
+num: 06
+description: REWAP layout system: twelve-column grid, maximum widths, spacing scale, section rhythm, editorial compositions and deliberate mobile adaptation.
+-->
+<header class="opener">
+  <div class="wrap grid">
+    <p class="opener-num" aria-hidden="true">06</p>
+    <div class="opener-head">
+      <h1>Layout</h1>
+      <p class="lead">A gallery hangs few works and gives each a wall. Pages do the same: one idea per view, an index margin on the left, and space that is planned rather than left over.</p>
+    </div>
+    <div class="opener-aside"><ul class="toc-inline" aria-label="On this page">
+      <li><a href="#grid">Grid</a></li><li><a href="#spacing">Spacing</a></li><li><a href="#rhythm">Rhythm</a></li><li><a href="#compositions">Compositions</a></li><li><a href="#mobile">Mobile</a></li></ul></div>
+  </div>
+</header>
+
+<section class="section" id="grid" aria-labelledby="grid-h">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="code">6.1</span>
+      <h2 id="grid-h">Grid and widths</h2>
+      <p>Twelve columns inside a 1440 px page. The first three columns are the index margin: section codes, labels and captions live there, and body copy starts at column four.</p>
+    </div>
+    <div class="grid" aria-hidden="true" style="height:9rem;margin-bottom:var(--s-4)">
+      <div style="grid-column:1/span 3;background:var(--c-bronze-100);display:flex;align-items:flex-end;padding:var(--s-2)" class="label">Index margin</div>
+      <div style="grid-column:4/span 7;background:var(--c-navy-100);display:flex;align-items:flex-end;padding:var(--s-2)" class="label">Reading column</div>
+      <div style="grid-column:11/span 2;background:var(--c-plaster);display:flex;align-items:flex-end;padding:var(--s-2)" class="label">Air</div>
+    </div>
+    <div class="grid" aria-hidden="true" style="height:3rem">
+      <span style="background:var(--c-plaster)"></span><span style="background:var(--c-plaster)"></span><span style="background:var(--c-plaster)"></span><span style="background:var(--c-plaster)"></span><span style="background:var(--c-plaster)"></span><span style="background:var(--c-plaster)"></span>
+      <span style="background:var(--c-plaster)"></span><span style="background:var(--c-plaster)"></span><span style="background:var(--c-plaster)"></span><span style="background:var(--c-plaster)"></span><span style="background:var(--c-plaster)"></span><span style="background:var(--c-plaster)"></span>
+    </div>
+    <div class="scroll-x mt-7">
+      <table class="data-table">
+        <thead><tr><th scope="col">Token</th><th scope="col">Value</th><th scope="col">Use</th></tr></thead>
+        <tbody>
+          <tr><td><code>--page-max</code></td><td class="num">90rem · 1440 px</td><td>Outer content width</td></tr>
+          <tr><td><code>--gutter</code></td><td class="num">20 → 64 px</td><td>Page side margin, fluid</td></tr>
+          <tr><td><code>--col-gap</code></td><td class="num">16 → 32 px</td><td>Column gap</td></tr>
+          <tr><td><code>--measure</code></td><td class="num">66ch</td><td>Longest body line</td></tr>
+          <tr><td>Search and map views</td><td class="num">Full bleed</td><td>Results are the one place the page width is released</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="section alt" id="spacing" aria-labelledby="spacing-h">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="code">6.2</span>
+      <h2 id="spacing-h">Spacing scale</h2>
+      <p>A 4 px base with deliberate jumps. Small steps group; large steps separate. Nothing in between is allowed.</p>
+    </div>
+    <div class="stack" style="margin-top:0">
+      <div class="scale-row"><span class="tok"><b>s-1 · s-2</b>4 · 8</span><span style="display:flex;gap:var(--s-4);align-items:center"><i style="width:4px;height:24px;background:var(--c-navy)"></i><i style="width:8px;height:24px;background:var(--c-navy)"></i><span class="small">Icon to label, label to field</span></span></div>
+      <div class="scale-row"><span class="tok"><b>s-3 · s-4</b>12 · 16</span><span style="display:flex;gap:var(--s-4);align-items:center"><i style="width:12px;height:24px;background:var(--c-navy)"></i><i style="width:16px;height:24px;background:var(--c-navy)"></i><span class="small">Inside components</span></span></div>
+      <div class="scale-row"><span class="tok"><b>s-5 · s-6</b>24 · 32</span><span style="display:flex;gap:var(--s-4);align-items:center"><i style="width:24px;height:24px;background:var(--c-navy)"></i><i style="width:32px;height:24px;background:var(--c-navy)"></i><span class="small">Between components</span></span></div>
+      <div class="scale-row"><span class="tok"><b>s-7 · s-8</b>48 · 64</span><span style="display:flex;gap:var(--s-4);align-items:center"><i style="width:48px;height:24px;background:var(--c-navy)"></i><i style="width:64px;height:24px;background:var(--c-navy)"></i><span class="small">Heading to content</span></span></div>
+      <div class="scale-row"><span class="tok"><b>section</b>64 → 144</span><span style="display:flex;gap:var(--s-4);align-items:center"><i style="width:144px;height:24px;background:var(--c-bronze)"></i><span class="small">Between sections, fluid</span></span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="rhythm" aria-labelledby="rhythm-h">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="code">6.3</span>
+      <h2 id="rhythm-h">Section rhythm</h2>
+      <p>Pages alternate density like rooms in a gallery: a full room, then a quiet one. Never two dense sections in a row; never more than one navy statement room per page.</p>
+    </div>
+    <ul class="spec-list">
+      <li><b>Gallery</b><span>The default room: white ground, index margin, generous space.</span></li>
+      <li><b>Plaster</b><span>The alternate room, for plates, tables and comparisons.</span></li>
+      <li><b>Statement</b><span>Registry Navy, one per page, for the single sentence the page exists to say, or the closing call to action.</span></li>
+      <li><b>Ledger</b><span>Data at full width: search results, market tables. Ends with its source line.</span></li>
+      <li><b>Spacing rule</b><span>More space above a heading than below it; the page’s closing section is always anchored by a clear next step.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="section alt" id="compositions" aria-labelledby="compositions-h">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="code">6.4</span>
+      <h2 id="compositions-h">Editorial compositions</h2>
+      <p>Five arrangements cover nearly every page. Each is asymmetric by default; centring is reserved for the single statement line.</p>
+    </div>
+    <div class="plates three">
+      <figure class="plate"><div class="plate-ground light" style="min-height:11rem"><svg viewBox="0 0 240 150" role="img" aria-label="Index composition: narrow left margin with label, wide right column of text" style="width:100%"><rect x="12" y="20" width="44" height="6" fill="#AD7E50"/><rect x="72" y="20" width="140" height="14" fill="#17283F"/><g fill="#C9D2DD"><rect x="72" y="46" width="150" height="5"/><rect x="72" y="57" width="140" height="5"/><rect x="72" y="68" width="148" height="5"/><rect x="72" y="79" width="110" height="5"/></g></svg></div><figcaption class="caption"><span class="caption-title">Index</span><span class="caption-meta">3 / 7 split. Chapters, guides, legal pages.</span></figcaption></figure>
+      <figure class="plate"><div class="plate-ground light" style="min-height:11rem"><svg viewBox="0 0 240 150" role="img" aria-label="Plate composition: a large image on the left two thirds, caption and text on the right" style="width:100%"><rect x="12" y="16" width="148" height="104" fill="#E5EAF0"/><rect x="12" y="126" width="80" height="4" fill="#545C66"/><rect x="172" y="16" width="56" height="10" fill="#17283F"/><g fill="#C9D2DD"><rect x="172" y="34" width="56" height="4"/><rect x="172" y="43" width="50" height="4"/><rect x="172" y="52" width="54" height="4"/></g></svg></div><figcaption class="caption"><span class="caption-title">Plate</span><span class="caption-meta">8 / 4. Listings, neighborhoods, founder.</span></figcaption></figure>
+      <figure class="plate"><div class="plate-ground light" style="min-height:11rem"><svg viewBox="0 0 240 150" role="img" aria-label="Statement composition: full navy field with one centred line" style="width:100%"><rect x="0" y="20" width="240" height="110" fill="#17283F"/><rect x="50" y="62" width="140" height="12" fill="#FAFAF9"/><rect x="80" y="82" width="80" height="4" fill="#D8B38A"/></svg></div><figcaption class="caption"><span class="caption-title">Statement</span><span class="caption-meta">Full bleed navy, one sentence. Once per page.</span></figcaption></figure>
+      <figure class="plate"><div class="plate-ground light" style="min-height:11rem"><svg viewBox="0 0 240 150" role="img" aria-label="Catalogue composition: three columns of property cards" style="width:100%"><g fill="#E5EAF0"><rect x="12" y="20" width="66" height="50"/><rect x="87" y="20" width="66" height="50"/><rect x="162" y="20" width="66" height="50"/></g><g fill="#17283F"><rect x="12" y="76" width="66" height="1"/><rect x="87" y="76" width="66" height="1"/><rect x="162" y="76" width="66" height="1"/><rect x="12" y="82" width="34" height="7"/><rect x="87" y="82" width="34" height="7"/><rect x="162" y="82" width="34" height="7"/></g></svg></div><figcaption class="caption"><span class="caption-title">Catalogue</span><span class="caption-meta">3 or 4 across. Featured listings, open houses.</span></figcaption></figure>
+      <figure class="plate"><div class="plate-ground light" style="min-height:11rem"><svg viewBox="0 0 240 150" role="img" aria-label="Ledger composition: full width table rows" style="width:100%"><rect x="12" y="24" width="216" height="2" fill="#17283F"/><g fill="#D9D7D3"><rect x="12" y="44" width="216" height="1"/><rect x="12" y="64" width="216" height="1"/><rect x="12" y="84" width="216" height="1"/><rect x="12" y="104" width="216" height="1"/></g><g fill="#545C66"><rect x="12" y="34" width="60" height="4"/><rect x="190" y="34" width="38" height="4"/><rect x="12" y="54" width="70" height="4"/><rect x="190" y="54" width="38" height="4"/><rect x="12" y="74" width="50" height="4"/><rect x="190" y="74" width="38" height="4"/></g></svg></div><figcaption class="caption"><span class="caption-title">Ledger</span><span class="caption-meta">Full width data. Market updates, comparables.</span></figcaption></figure>
+      <figure class="plate"><div class="plate-ground light" style="min-height:11rem"><svg viewBox="0 0 240 150" role="img" aria-label="Split search: list on the left, map on the right" style="width:100%"><g fill="#E5EAF0"><rect x="12" y="20" width="40" height="28"/><rect x="12" y="56" width="40" height="28"/><rect x="12" y="92" width="40" height="28"/></g><g fill="#C9D2DD"><rect x="58" y="24" width="40" height="4"/><rect x="58" y="60" width="40" height="4"/><rect x="58" y="96" width="40" height="4"/></g><rect x="110" y="20" width="118" height="100" fill="#F4F2EF" stroke="#D9D7D3"/><g fill="#17283F"><circle cx="140" cy="50" r="4"/><circle cx="182" cy="74" r="4"/><circle cx="160" cy="98" r="4"/></g></svg></div><figcaption class="caption"><span class="caption-title">Split search</span><span class="caption-meta">List and map, full bleed. Search only.</span></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="mobile" aria-labelledby="mobile-h">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="code">6.5</span>
+      <h2 id="mobile-h">Designed for each screen</h2>
+      <p>Mobile is not a compressed desktop. Each range changes what the page prioritises, not just how wide it is.</p>
+    </div>
+    <div class="scroll-x">
+      <table class="data-table">
+        <thead><tr><th scope="col">Range</th><th scope="col">Columns</th><th scope="col">What changes</th></tr></thead>
+        <tbody>
+          <tr><td class="num">Under 400 px</td><td class="num">4</td><td>Single column; index margin becomes a line above the heading; tables scroll inside their frame; buttons go full width.</td></tr>
+          <tr><td class="num">400–767 px</td><td class="num">4</td><td>Search is a bottom sheet over the map; list is default. Property facts wrap onto two lines, never truncate.</td></tr>
+          <tr><td class="num">768–1023 px</td><td class="num">8</td><td>Two-up catalogue; plates and captions side by side; filters in a drawer.</td></tr>
+          <tr><td class="num">1024–1439 px</td><td class="num">12</td><td>Index margin appears; split search list and map; filters inline.</td></tr>
+          <tr><td class="num">1440 px and up</td><td class="num">12</td><td>Content stops at 1440; extra width becomes margin, except search, which keeps the map growing.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <ul class="spec-list mt-7">
+      <li><b>Touch</b><span>Every target at least 44 × 44 px with 8 px between neighbours.</span></li>
+      <li><b>Thumb reach</b><span>On phones, primary actions for search and listing pages sit in a fixed bottom bar: Save, Share, Ask a question.</span></li>
+      <li><b>Images</b><span>Responsive sources at 480, 768, 1200 and 1800 widths with fixed aspect ratios, so nothing shifts as it loads.</span></li>
+    </ul>
+  </div>
+</section>

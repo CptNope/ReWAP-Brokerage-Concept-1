@@ -1,0 +1,423 @@
+<!--
+title: Interface
+slug: interface
+num: 07
+description: REWAP interface components: navigation, buttons, search, filters, property cards, IDX views, agent and team cards, neighborhood and editorial modules, forms, notices, disclosures, accordions, pagination and calls to action.
+-->
+<header class="opener">
+  <div class="wrap grid">
+    <p class="opener-num" aria-hidden="true">07</p>
+    <div class="opener-head">
+      <h1>Interface</h1>
+      <p class="lead">Working components, not pictures of them. Every control here is real HTML with its states, ready to translate into WordPress blocks.</p>
+    </div>
+    <div class="opener-aside"><ul class="toc-inline" aria-label="On this page">
+      <li><a href="#nav">Navigation</a></li><li><a href="#actions">Buttons and links</a></li><li><a href="#search">Search</a></li><li><a href="#cards">Property cards</a></li>
+      <li><a href="#idx">IDX views</a></li><li><a href="#people">Agents and teams</a></li><li><a href="#modules">Places and articles</a></li><li><a href="#forms">Forms</a></li>
+      <li><a href="#feedback">Feedback</a></li><li><a href="#structure">Disclosures and paging</a></li><li><a href="#cta">Calls to action</a></li></ul></div>
+  </div>
+</header>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-search" viewBox="0 0 20 20"><g fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8.5" cy="8.5" r="5.5"/><path d="M12.6 12.6L17 17"/></g></symbol>
+  <symbol id="i-heart" viewBox="0 0 20 20"><path d="M10 16.5S3 12.4 3 7.6A3.6 3.6 0 0 1 10 6a3.6 3.6 0 0 1 7 1.6c0 4.8-7 8.9-7 8.9z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 16 16"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5"/></symbol>
+  <symbol id="i-left" viewBox="0 0 16 16"><path d="M14 8H3M7 4L3 8l4 4" fill="none" stroke="currentColor" stroke-width="1.5"/></symbol>
+  <symbol id="i-x" viewBox="0 0 16 16"><path d="M4 4l8 8M12 4l-8 8" fill="none" stroke="currentColor" stroke-width="1.5"/></symbol>
+  <symbol id="i-info" viewBox="0 0 20 20"><g fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="10" cy="10" r="7.5"/><path d="M10 9v5M10 6.2v.1"/></g></symbol>
+  <symbol id="i-check" viewBox="0 0 20 20"><g fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="10" cy="10" r="7.5"/><path d="M6.5 10.2l2.4 2.3 4.6-4.8"/></g></symbol>
+  <symbol id="i-alert" viewBox="0 0 20 20"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 2.8L18 17H2z" stroke-linejoin="round"/><path d="M10 8v4.2M10 14.4v.1"/></g></symbol>
+  <symbol id="i-cal" viewBox="0 0 20 20"><g fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4.5" width="14" height="12"/><path d="M3 8.5h14M7 2.5v4M13 2.5v4"/></g></symbol>
+  <symbol id="i-sliders" viewBox="0 0 20 20"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 6h9M15 6h2M3 14h2M8 14h9"/><circle cx="13.5" cy="6" r="1.8"/><circle cx="6.5" cy="14" r="1.8"/></g></symbol>
+  <symbol id="i-pin" viewBox="0 0 20 20"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 18s5.5-5.4 5.5-9.5a5.5 5.5 0 0 0-11 0C4.5 12.6 10 18 10 18z"/><circle cx="10" cy="8.5" r="2"/></g></symbol>
+  <symbol id="i-chain" viewBox="0 0 12 12"><path d="M3 2l5 4-5 4" fill="none" stroke="currentColor" stroke-width="1.5"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 20 20"><path d="M3 6h14M3 10h14M3 14h14" fill="none" stroke="currentColor" stroke-width="1.5"/></symbol>
+</svg>
+
+<section class="section" id="nav" aria-labelledby="nav-h">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="code">7.1</span>
+      <h2 id="nav-h">Navigation</h2>
+      <p>Three audiences, three first-level paths, in the same order everywhere. Search is a destination, not a widget.</p>
+    </div>
+    <div style="border:1px solid var(--rule-strong);background:var(--c-gallery)">
+      <div style="display:flex;align-items:center;gap:var(--s-6);padding:var(--s-4) var(--s-5);border-bottom:1px solid var(--rule);flex-wrap:wrap">
+        <img src="{{root}}assets/logo/rewap-logo-full-color.svg" alt="REWAP Brokerage" width="200" height="70" style="width:200px">
+        <nav aria-label="Example primary navigation" style="margin-right:auto">
+          <ul style="list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:var(--s-2) var(--s-5);font:500 .9375rem/1 var(--font-ui)">
+            <li><a href="#nav" style="text-decoration:none;color:var(--c-night);padding-bottom:6px;border-bottom:1px solid var(--c-bronze)" aria-current="page">Buy</a></li>
+            <li><a href="#nav" style="text-decoration:none;color:var(--c-night)">Sell</a></li>
+            <li><a href="#nav" style="text-decoration:none;color:var(--c-night)">Invest</a></li>
+            <li><a href="#nav" style="text-decoration:none;color:var(--c-night)">Communities</a></li>
+            <li><a href="#nav" style="text-decoration:none;color:var(--c-night)">Market</a></li>
+            <li><a href="#nav" style="text-decoration:none;color:var(--c-night)">The Firm</a></li>
+          </ul>
+        </nav>
+        <div class="btn-row" style="gap:var(--s-3)">
+          <a class="btn quiet small" href="#nav"><span>Saved</span></a>
+          <a class="btn small" href="#nav">Search homes</a>
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:var(--s-3) var(--s-4);max-width:24rem;border-right:1px solid var(--rule)">
+        <img src="{{root}}assets/logo/derived/rewap-wordmark-full-color.svg" alt="REWAP" width="120" height="35" style="width:120px">
+        <span class="btn-row" style="gap:var(--s-2)"><button class="icon-btn" type="button" aria-label="Search"><svg><use href="#i-search"/></svg></button><button class="icon-btn" type="button" aria-label="Open menu"><svg><use href="#i-menu"/></svg></button></span>
+      </div>
+    </div>
+    <ul class="spec-list mt-7">
+      <li><b>Desktop</b><span>Logo at 200–240 px, six links in Public Sans 500, current page marked by a 1 px bronze rule. One filled action: Search homes.</span></li>
+      <li><b>Phone</b><span>Derived wordmark at 120 px, search and menu icons. The menu opens as a full-height sheet with large Caslon links and the phone number at the bottom.</span></li>
+      <li><b>Behaviour</b><span>Header hides on scroll down, returns on scroll up; never sticky on listing galleries. Menus close on Escape and return focus to their trigger.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="section alt" id="actions" aria-labelledby="actions-h">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="code">7.2</span>
+      <h2 id="actions-h">Buttons and links</h2>
+      <p>Square, quiet and few. A view has one primary action. Labels say what happens.</p>
+    </div>
+    <div class="stack">
+      <div class="btn-row">
+        <a class="btn" href="#actions">Request a consultation <svg class="go"><use href="#i-arrow"/></svg></a>
+        <a class="btn secondary" href="#actions">View listing</a>
+        <a class="btn quiet" href="#actions"><span>Read the selling guide</span></a>
+        <button class="btn" type="button" disabled>Submit</button>
+        <button class="btn is-loading" type="button" aria-label="Sending">Send</button>
+      </div>
+      <div style="background:var(--c-navy);padding:var(--s-6)" class="on-dark btn-row">
+        <a class="btn on-navy" href="#actions">Book a pricing review</a>
+        <a href="#actions">Text link on navy</a>
+      </div>
+      <p>Inline links in body copy look like <a href="#actions">this link to the buyer’s guide</a>: navy with a fine bronze underline that turns navy on hover.</p>
+    </div>
+    <div class="scroll-x mt-7">
+      <table class="data-table">
+        <thead><tr><th scope="col">Variant</th><th scope="col">Use</th><th scope="col">States</th></tr></thead>
+        <tbody>
+          <tr><td>Primary</td><td>The one main action per view</td><td>Hover Navy 700 · pressed Night · disabled Plaster/Granite · loading spinner, label kept for screen readers</td></tr>
+          <tr><td>Secondary</td><td>Alternative actions beside a primary</td><td>Hover fills Night</td></tr>
+          <tr><td>Quiet</td><td>Tertiary, reading links, “more” actions</td><td>Underline turns navy on hover</td></tr>
+          <tr><td>On navy</td><td>Inside statement rooms and CTA bands</td><td>Hover Bronze Light</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="search" aria-labelledby="search-h">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="code">7.3</span>
+      <h2 id="search-h">Search and filters</h2>
+      <p>Location first, then the two filters that matter most. Everything else lives one tap away, so the bar never becomes a form.</p>
+    </div>
+    <form class="stack" data-demo role="search" aria-label="Example property search">
+      <div class="segmented" role="radiogroup" aria-label="Listing status">
+        <label><input type="radio" name="st" checked><span>For sale</span></label>
+        <label><input type="radio" name="st"><span>Open houses</span></label>
+        <label><input type="radio" name="st"><span>Recently sold</span></label>
+      </div>
+      <div class="search">
+        <div class="seg"><label for="q-loc">Location</label><input id="q-loc" type="text" placeholder="Town, neighborhood, ZIP or address" autocomplete="off"></div>
+        <div class="seg"><label for="q-price">Price</label><select id="q-price"><option>Any price</option><option>Up to $400,000</option><option>$400,000–$700,000</option><option>$700,000 and up</option></select></div>
+        <div class="seg"><label for="q-beds">Beds</label><select id="q-beds"><option>Any</option><option>2+</option><option>3+</option><option>4+</option></select></div>
+        <button class="btn" type="submit"><svg><use href="#i-search"/></svg>Search</button>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:var(--s-4);align-items:center;justify-content:space-between">
+        <div class="chips" aria-label="Quick filters">
+          <button class="chip" type="button" aria-pressed="true">Multi-family <svg><use href="#i-x"/></svg></button>
+          <button class="chip" type="button" aria-pressed="false">Single-family</button>
+          <button class="chip" type="button" aria-pressed="false">Condo</button>
+          <button class="chip" type="button" aria-pressed="false">Garage</button>
+          <button class="chip" type="button" aria-pressed="false"><svg><use href="#i-sliders"/></svg>More filters</button>
+        </div>
+        <div class="field" style="grid-template-columns:auto 12rem;align-items:center;gap:var(--s-3)"><label for="sort">Sort</label><select id="sort" class="select" style="min-height:40px"><option>Newest</option><option>Price, low to high</option><option>Price, high to low</option><option>Largest</option></select></div>
+      </div>
+    </form>
+    <ul class="spec-list mt-7">
+      <li><b>Location input</b><span>Suggests towns, neighborhoods, ZIPs, addresses and MLS numbers, grouped and labelled. Arrow keys move through suggestions; Enter selects.</span></li>
+      <li><b>Filters</b><span>Applied filters always show as removable chips. “More filters” opens a side panel on desktop and a full sheet on phones, with a live result count on its apply button.</span></li>
+      <li><b>Results</b><span>Updates announce politely to screen readers (“112 homes match”). Never auto-scroll the page when results change.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="section alt" id="cards" aria-labelledby="cards-h">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="code">7.4</span>
+      <h2 id="cards-h">Property cards</h2>
+      <p>A catalogue entry: image, price, address, facts, source. No badges beyond status; no “hot” or “must see.”</p>
+    </div>
+    <p style="margin-bottom:var(--s-5);display:flex;gap:var(--s-3);align-items:center"><span class="tag-sample">Sample data</span><span class="note">Addresses and brokerages are fictional.</span></p>
+    <div class="plates three">
+      <article class="property">
+        <div class="property-media elev"><img src="{{root}}assets/img/elevations/triple-decker.svg" alt="" width="600" height="400" loading="lazy" style="object-fit:contain"></div>
+        <span class="property-status">For sale</span>
+        <button class="icon-btn property-save" type="button" aria-pressed="false" aria-label="Save 41 Example Street" data-on="Remove 41 Example Street from saved" data-off="Save 41 Example Street"><svg><use href="#i-heart"/></svg></button>
+        <div class="property-body">
+          <span class="property-price">$689,000</span>
+          <h3 class="property-address" style="font:italic 400 1.0625rem/1.35 var(--font-text)"><a href="#cards">41 Example Street, Worcester</a></h3>
+          <span class="property-facts"><span>3 units</span><span>9 bd</span><span>3 ba</span><span>3,960 sq ft</span></span>
+          <span class="property-attrib">Courtesy of Example Realty · Photo pending</span>
+        </div>
+      </article>
+      <article class="property">
+        <div class="property-media elev"><img src="{{root}}assets/img/elevations/colonial.svg" alt="" width="600" height="400" loading="lazy" style="object-fit:contain"></div>
+        <span class="property-status open">Open Sat 11–1</span>
+        <button class="icon-btn property-save" type="button" aria-pressed="true" aria-label="Remove 7 Sample Lane from saved" data-on="Remove 7 Sample Lane from saved" data-off="Save 7 Sample Lane"><svg><use href="#i-heart"/></svg></button>
+        <div class="property-body">
+          <span class="property-price">$824,500</span>
+          <h3 class="property-address" style="font:italic 400 1.0625rem/1.35 var(--font-text)"><a href="#cards">7 Sample Lane, Lenox</a></h3>
+          <span class="property-facts"><span>4 bd</span><span>2.5 ba</span><span>2,610 sq ft</span><span>1.2 ac</span></span>
+          <span class="property-attrib">Listed by REWAP Brokerage</span>
+        </div>
+      </article>
+      <article class="property">
+        <div class="property-media elev"><img src="{{root}}assets/img/elevations/mill.svg" alt="" width="600" height="400" loading="lazy" style="object-fit:contain"></div>
+        <span class="property-status">Under agreement</span>
+        <button class="icon-btn property-save" type="button" aria-pressed="false" aria-label="Save Unit 304, 1 Demo Mill Way" data-on="Remove Unit 304 from saved" data-off="Save Unit 304, 1 Demo Mill Way"><svg><use href="#i-heart"/></svg></button>
+        <div class="property-body">
+          <span class="property-price">$419,000</span>
+          <h3 class="property-address" style="font:italic 400 1.0625rem/1.35 var(--font-text)"><a href="#cards">Unit 304, 1 Demo Mill Way, Lowell</a></h3>
+          <span class="property-facts"><span>2 bd</span><span>2 ba</span><span>1,210 sq ft</span><span>HOA $412/mo</span></span>
+          <span class="property-attrib">Courtesy of Sample Brokerage Group</span>
+        </div>
+      </article>
+    </div>
+    <ul class="spec-list mt-7">
+      <li><b>Image</b><span>4 : 3, the MLS standard. When a listing has no photograph yet, the matching elevation drawing appears with “Photo pending.”</span></li>
+      <li><b>Status</b><span>One status label only, from the MLS vocabulary: For sale, Open house with time, Under agreement, Sold with date.</span></li>
+      <li><b>Attribution</b><span>Listing brokerage on every card, as MLS rules require. REWAP’s own listings say so plainly.</span></li>
+      <li><b>Interaction</b><span>The whole card is one link (the address); the save button is a separate, labelled toggle above it.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="section" id="idx" aria-labelledby="idx-h">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="code">7.5</span>
+      <h2 id="idx-h">IDX views</h2>
+      <p>MLS data rendered in REWAP’s own components through a provider adapter, so the feed looks native and the vendor can change without a redesign. See 9.4 for the data contract.</p>
+    </div>
+    <div class="dodont">
+      <div>
+        <h3 style="margin-bottom:var(--s-4)">Results list</h3>
+        <div style="background:#fff;border:1px solid var(--rule-strong);padding:0 var(--s-5)">
+          <p class="small" style="padding:var(--s-4) 0;border-bottom:1px solid var(--c-night)" role="status"><b style="color:var(--c-night)">112 homes</b> in Worcester County · sample</p>
+          <article class="result-row"><div class="property-media elev"><img src="{{root}}assets/img/elevations/colonial.svg" alt="" width="600" height="400" loading="lazy" style="object-fit:contain"></div>
+            <div style="display:grid;gap:4px"><span class="property-price">$559,000</span><span class="property-address">22 Example Road, Shrewsbury</span><span class="property-facts"><span>4 bd</span><span>2 ba</span><span>2,040 sq ft</span></span></div></article>
+          <article class="result-row" style="border-bottom:0"><div class="property-media elev"><img src="{{root}}assets/img/elevations/triple-decker.svg" alt="" width="600" height="400" loading="lazy" style="object-fit:contain"></div>
+            <div style="display:grid;gap:4px"><span class="property-price">$615,000</span><span class="property-address">8 Sample Terrace, Worcester</span><span class="property-facts"><span>3 units</span><span>8 bd</span><span>3 ba</span></span></div></article>
+        </div>
+      </div>
+      <div>
+        <h3 style="margin-bottom:var(--s-4)">Listing facts</h3>
+        <div style="background:#fff;border:1px solid var(--rule-strong);padding:var(--s-5)">
+          <table class="data-table">
+            <caption class="sr-only">Sample listing facts</caption>
+            <tbody>
+              <tr><th scope="row">Status</th><td class="r">For sale · 12 days</td></tr>
+              <tr><th scope="row">Type</th><td class="r">Multi-family, 3 units</td></tr>
+              <tr><th scope="row">Year built</th><td class="r num">1912</td></tr>
+              <tr><th scope="row">Lot</th><td class="r num">0.14 ac · 6,098 sq ft</td></tr>
+              <tr><th scope="row">Taxes (FY2026)</th><td class="r num">$7,212</td></tr>
+              <tr><th scope="row">Gross rents (stated)</th><td class="r num">$5,850 / mo</td></tr>
+              <tr><th scope="row">MLS #</th><td class="r num">73000000</td></tr>
+            </tbody>
+          </table>
+          <p class="property-attrib" style="margin-top:var(--s-4)">Sample data. Listing data courtesy of MLS PIN; deemed reliable but not guaranteed. Last updated with date and time.</p>
+        </div>
+        <h3 style="margin:var(--s-6) 0 var(--s-4)">Saved search</h3>
+        <div style="display:grid;grid-template-columns:1fr auto;gap:var(--s-3);align-items:center;background:#fff;border:1px solid var(--rule-strong);padding:var(--s-4) var(--s-5)">
+          <div><p style="font:400 1.125rem/1.3 var(--font-display);color:var(--c-night)">Multi-family under $700k, Worcester</p><p class="small">Daily email · 3 new since Monday</p></div>
+          <a class="btn quiet small" href="#idx"><span>Edit</span></a>
+        </div>
+      </div>
+    </div>
+    <ul class="spec-list mt-7">
+      <li><b>Map and list</b><span>Split view on desktop with the list on the left; on phones, the map is a full screen with the list in a draggable bottom sheet. Map pins are navy squares carrying the abbreviated price; the selected pin turns bronze and its card scrolls into view. The list is always the accessible equivalent of the map.</span></li>
+      <li><b>Listing detail</b><span>Gallery first at 4 : 3, then price, address and facts table, the description, then “What to know” (taxes, zoning, disclosures) written by REWAP where available. Contact sits in a fixed bottom bar on phones.</span></li>
+      <li><b>Open houses</b><span>Listed by date with calendar export. Times in Public Sans; the date as the heading.</span></li>
+      <li><b>Saved properties and searches</b><span>Saving needs only an email; accounts are optional. Alerts are opt-in with frequency control.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="section alt" id="people" aria-labelledby="people-h">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="code">7.6</span>
+      <h2 id="people-h">Agents, brokers and affiliated teams</h2>
+      <p>REWAP frames the people who work under it without absorbing them. Every person and team page states the relationship in one line.</p>
+    </div>
+    <div class="dodont">
+      <div>
+        <div class="agent">
+          <div class="portrait-frame" aria-hidden="true"><span>Portrait to commission · 5.4</span></div>
+          <div>
+            <p class="agent-name">Hong Tran</p>
+            <p class="agent-role">Founder · Real Estate Lawyer</p>
+            <div class="agent-links"><a href="tel:+15085097759">508-509-7759</a><a href="mailto:hongtran@lehonglaw.com">Email</a></div>
+          </div>
+        </div>
+        <div class="agent">
+          <div class="portrait-frame" aria-hidden="true"><span>Portrait to commission · 5.4</span></div>
+          <div>
+            <p class="agent-name">Brandon Oberdorfer</p>
+            <p class="agent-role">Broker · The Oberdorfer Group</p>
+            <div class="agent-links"><a href="#people">Profile</a><a href="#people">Listings</a></div>
+          </div>
+        </div>
+        
+      </div>
+      <div class="affil">
+        <h3 style="font:600 var(--fs-ui)/1.3 var(--font-ui);color:var(--c-night)">Relationship line</h3>
+        <p class="affil-chain"><b>REWAP Brokerage</b><svg><use href="#i-chain"/></svg><b>The Oberdorfer Group</b><svg><use href="#i-chain"/></svg>Brandon Oberdorfer, Broker</p>
+        <div style="display:flex;align-items:center;gap:var(--s-5);flex-wrap:wrap;padding-top:var(--s-5);border-top:1px solid var(--rule)">
+          <img src="{{root}}assets/logo/rewap-logo-full-color.svg" alt="REWAP Brokerage" width="180" height="63" style="width:180px">
+          <span style="width:1px;align-self:stretch;background:var(--rule-strong)" aria-hidden="true"></span>
+          <span class="team-mark">The Oberdorfer Group<br>team mark (theirs)</span>
+        </div>
+        <ul class="spec-list">
+          <li><b>Co-branding</b><span>REWAP first, team second, equal height, divided by a 1 px rule and 2 r of space.</span></li>
+          <li><b>Team pages</b><span>Live at <span class="data">/teams/oberdorfer-group</span>, use the team’s own name and photography, and carry REWAP’s header, footer and disclosures.</span></li>
+          <li><b>Never</b><span>Recolor a team mark in REWAP colors, merge the names, or present a team member as REWAP staff without the team.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="modules" aria-labelledby="modules-h">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="code">7.7</span>
+      <h2 id="modules-h">Places and articles</h2>
+      <p>Community pages describe places with sourced facts. Editorial cards lead with the question they answer.</p>
+    </div>
+    <div class="plates three">
+      <article class="place">
+        <div class="place-media elev"><img src="{{root}}assets/img/elevations/mill.svg" alt="" width="600" height="400" loading="lazy" style="width:100%;height:100%;object-fit:contain"></div>
+        <h3 class="place-name"><a href="#modules" style="text-decoration:none;color:inherit">Canal District, Worcester</a></h3>
+        <dl><dt>Median sale</dt><dd>—</dd><dt>Active</dt><dd>—</dd><dt>Days on market</dt><dd>—</dd></dl>
+        <p class="small">Figures populate from the market data source with its date. Shown empty here rather than invented.</p>
+      </article>
+      <a class="article" href="#modules">
+        <h3>What does a home inspection contingency actually protect?</h3>
+        <p>The clause, what it lets you do, and the deadline most buyers miss.</p>
+        <span class="article-meta">Buying guide · 8 minute read</span>
+      </a>
+      <a class="article" href="#modules">
+        <h3>Reading a rent roll before you make an offer on a three-decker</h3>
+        <p>Which numbers to ask for, which to verify, and which to discount.</p>
+        <span class="article-meta">Investing explainer · 11 minute read</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section alt" id="forms" aria-labelledby="forms-h">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="code">7.8</span>
+      <h2 id="forms-h">Forms</h2>
+      <p>Labels above fields, hints before errors, errors that say how to fix the problem. Ask only what the next step needs.</p>
+    </div>
+    <div class="body-cols">
+      <form class="full form-grid two" data-demo novalidate aria-label="Example consultation request" style="max-width:48rem;background:#fff;padding:clamp(1.25rem,3vw,2.5rem);border:1px solid var(--rule-strong)">
+        <fieldset class="field span-2">
+          <legend>What can we help with?</legend>
+          <div class="btn-row" style="gap:var(--s-3) var(--s-6);margin-top:var(--s-2)">
+            <label class="check"><input type="radio" name="goal" checked> Buying</label>
+            <label class="check"><input type="radio" name="goal"> Selling</label>
+            <label class="check"><input type="radio" name="goal"> Investing</label>
+          </div>
+        </fieldset>
+        <div class="field"><label for="f-name">Full name</label><input class="input" id="f-name" autocomplete="name" value="Jordan Example"></div>
+        <div class="field has-error"><label for="f-phone">Phone</label><input class="input" id="f-phone" type="tel" autocomplete="tel" value="50850" aria-invalid="true" aria-describedby="f-phone-err">
+          <span class="error" id="f-phone-err"><svg><use href="#i-alert"/></svg>Enter a phone number with ten digits, for example 508-509-7759.</span></div>
+        <div class="field span-2"><label for="f-email">Email</label><span class="hint" id="f-email-hint">We reply within one business day.</span><input class="input" id="f-email" type="email" autocomplete="email" aria-describedby="f-email-hint" placeholder="name@example.com"></div>
+        <div class="field span-2"><label for="f-msg">Tell us about the property or the search <span style="font-weight:400;color:var(--text-secondary)">(optional)</span></label><textarea class="textarea" id="f-msg"></textarea></div>
+        <label class="check span-2"><input type="checkbox"> Email me new listings that match my search</label>
+        <div class="span-2 btn-row"><button class="btn" type="submit">Request a consultation</button><span class="small">No obligation. We never share your details.</span></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="feedback" aria-labelledby="feedback-h">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="code">7.9</span>
+      <h2 id="feedback-h">Notices and empty states</h2>
+      <p>Status color only for status. Every message names the situation and the next step.</p>
+    </div>
+    <div class="plates two">
+      <div class="stack" style="margin:0">
+        <p class="notice info" role="note"><svg><use href="#i-info"/></svg>Listing data refreshes every 15 minutes. Showing results as of 9:30 AM.</p>
+        <p class="notice success" role="status"><svg><use href="#i-check"/></svg>Search saved. We will email new matches daily.</p>
+        <p class="notice warning" role="note"><svg><use href="#i-alert"/></svg>This listing is under agreement. Showings may be limited.</p>
+        <p class="notice error" role="alert"><svg><use href="#i-alert"/></svg>We could not load the map. The list below has every result.</p>
+      </div>
+      <div style="display:grid;gap:var(--s-4);align-content:center;justify-items:start;padding:var(--s-7) var(--s-6);border:1px solid var(--rule-strong);background:#fff">
+        <p style="font:400 var(--fs-h3)/1.2 var(--font-display);color:var(--c-night)">No active listings match these filters.</p>
+        <p class="small">Widen the price range or add a nearby town. You can also save this search and we will tell you when something matches.</p>
+        <div class="btn-row"><a class="btn secondary small" href="#feedback">Clear filters</a><a class="btn quiet small" href="#feedback"><span>Save this search</span></a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section alt" id="structure" aria-labelledby="structure-h">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="code">7.10</span>
+      <h2 id="structure-h">Accordions, disclosures and paging</h2>
+      <p>Legal text is part of the design, set to be read, not hidden in grey.</p>
+    </div>
+    <div class="dodont">
+      <div class="accordion">
+        <details open><summary>What does a buyer’s agency agreement commit me to? <span class="pm" aria-hidden="true"></span></summary>
+          <div class="panel"><p>It defines who represents you, for how long, and how that representation is paid. We will walk through every clause with you before you sign, and you will receive a copy.</p></div></details>
+        <details><summary>Who pays the brokerage fee? <span class="pm" aria-hidden="true"></span></summary>
+          <div class="panel"><p>Fees are negotiable and set out in writing. We explain the options for your situation at the first meeting.</p></div></details>
+        <details><summary>Can REWAP act as my attorney in the sale? <span class="pm" aria-hidden="true"></span></summary>
+          <div class="panel"><p>Placeholder answer pending review by Hong Tran; the roles of broker and attorney in a single transaction must be explained accurately.</p></div></details>
+      </div>
+      <div class="stack" style="margin:0">
+        <div class="disclosure">
+          <h3 style="font:600 var(--fs-small)/1.4 var(--font-ui);color:var(--c-night)">Massachusetts Mandatory Licensee-Consumer Relationship Disclosure</h3>
+          <p>Massachusetts requires real estate licensees to give you this disclosure at the first personal meeting about a specific property. It explains the types of agency relationships available to you.</p>
+          <p><a href="#structure">Read the disclosure (PDF)</a> · <a href="#structure">Fair Housing statement</a> · REWAP Brokerage LLC, 652 Park Ave, Worcester, MA 01603</p>
+        </div>
+        <nav class="pager" aria-label="Results pages">
+          <a class="edge" href="#structure"><svg><use href="#i-left"/></svg>Previous</a>
+          <a href="#structure">1</a><a href="#structure" aria-current="page">2</a><a href="#structure">3</a><span aria-hidden="true">…</span><a href="#structure">12</a>
+          <a class="edge" href="#structure">Next<svg><use href="#i-arrow"/></svg></a>
+        </nav>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="cta" aria-labelledby="cta-h">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="code">7.11</span>
+      <h2 id="cta-h">Calls to action</h2>
+      <p>One per page, at the end, specific to the page’s audience. It offers a conversation, not a funnel.</p>
+    </div>
+    <div class="cta">
+      <h3>Sell with someone who has read every line.</h3>
+      <div class="stack" style="margin:0">
+        <p>Ask for a pricing review. We will show you the comparable sales we used and why, before you decide anything.</p>
+        <div class="btn-row"><a class="btn on-navy" href="#cta">Request a pricing review</a><a href="tel:+15085097759">Or call 508-509-7759</a></div>
+      </div>
+    </div>
+  </div>
+</section>

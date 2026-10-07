@@ -1,0 +1,546 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-07T02:01:30.445395+00:00",
+  "title": "Design System: REWAP Brokerage \u2014 Concept 1",
+  "extensions": {
+    "colorMeta": {
+      "night": {
+        "role": "primary",
+        "displayName": "Night",
+        "canonical": "oklch(20.5% 0.035 256)",
+        "tonalRamp": [
+          "#030B1A",
+          "#162232",
+          "#2F3B4D",
+          "#515F72",
+          "#738195",
+          "#97A6BB",
+          "#BFCFE5",
+          "#E0F0FF"
+        ]
+      },
+      "navy": {
+        "role": "primary",
+        "displayName": "Registry Navy",
+        "canonical": "oklch(27.5% 0.048 256)",
+        "tonalRamp": [
+          "#010B1F",
+          "#112238",
+          "#2A3B53",
+          "#4C5F79",
+          "#6E829D",
+          "#91A6C3",
+          "#BAD0EE",
+          "#DAF1FF"
+        ]
+      },
+      "navy-700": {
+        "role": "primary",
+        "displayName": "Navy 700",
+        "canonical": "oklch(34.5% 0.052 256)",
+        "tonalRamp": [
+          "#000A20",
+          "#10223A",
+          "#283B55",
+          "#4A5F7B",
+          "#6C829F",
+          "#90A7C5",
+          "#B8D0F0",
+          "#D8F1FF"
+        ]
+      },
+      "navy-500": {
+        "role": "primary",
+        "displayName": "Harbor",
+        "canonical": "oklch(48.0% 0.045 256)",
+        "tonalRamp": [
+          "#010B1E",
+          "#132237",
+          "#2B3B52",
+          "#4D5F77",
+          "#6F829B",
+          "#93A6C1",
+          "#BBD0EC",
+          "#DBF1FF"
+        ]
+      },
+      "navy-200": {
+        "role": "primary",
+        "displayName": "Fog",
+        "canonical": "oklch(86.0% 0.018 256)",
+        "tonalRamp": [
+          "#070B13",
+          "#1C222A",
+          "#343B44",
+          "#575E68",
+          "#79818B",
+          "#9DA5B0",
+          "#C6CFDA",
+          "#E7EFFB"
+        ]
+      },
+      "navy-100": {
+        "role": "primary",
+        "displayName": "Mist",
+        "canonical": "oklch(93.5% 0.010 256)",
+        "tonalRamp": [
+          "#080B0F",
+          "#1F2226",
+          "#373B40",
+          "#5A5E63",
+          "#7C8186",
+          "#A1A5AB",
+          "#CACED4",
+          "#EAEFF5"
+        ]
+      },
+      "bronze-700": {
+        "role": "secondary",
+        "displayName": "Bronze Deep",
+        "canonical": "oklch(48.0% 0.075 62)",
+        "tonalRamp": [
+          "#1F0100",
+          "#3A1600",
+          "#563007",
+          "#7C532E",
+          "#A17651",
+          "#C79A74",
+          "#F2C39C",
+          "#FFE4BB"
+        ]
+      },
+      "bronze": {
+        "role": "secondary",
+        "displayName": "Bronze",
+        "canonical": "oklch(63.0% 0.085 65)",
+        "tonalRamp": [
+          "#200000",
+          "#3C1500",
+          "#582F00",
+          "#7E5324",
+          "#A37547",
+          "#CA9A6B",
+          "#F5C393",
+          "#FFE3B3"
+        ]
+      },
+      "bronze-300": {
+        "role": "secondary",
+        "displayName": "Bronze Light",
+        "canonical": "oklch(79.0% 0.070 70)",
+        "tonalRamp": [
+          "#1C0300",
+          "#361A00",
+          "#513308",
+          "#77562F",
+          "#9B7951",
+          "#C19D74",
+          "#ECC69C",
+          "#FFE7BC"
+        ]
+      },
+      "bronze-100": {
+        "role": "secondary",
+        "displayName": "Bronze Tint",
+        "canonical": "oklch(93.5% 0.025 75)",
+        "tonalRamp": [
+          "#110902",
+          "#292014",
+          "#42392C",
+          "#665C4E",
+          "#897E70",
+          "#AEA394",
+          "#D8CCBC",
+          "#F9EDDD"
+        ]
+      },
+      "gallery": {
+        "role": "neutral",
+        "displayName": "Gallery",
+        "canonical": "oklch(98.5% 0.002 90)",
+        "tonalRamp": [
+          "#0B0B0A",
+          "#222220",
+          "#3B3A39",
+          "#5E5D5C",
+          "#81807F",
+          "#A5A4A3",
+          "#CECECC",
+          "#EFEEED"
+        ]
+      },
+      "plaster": {
+        "role": "neutral",
+        "displayName": "Plaster",
+        "canonical": "oklch(96.2% 0.004 85)",
+        "tonalRamp": [
+          "#0C0B09",
+          "#22211F",
+          "#3B3A38",
+          "#5F5D5B",
+          "#81807D",
+          "#A6A4A2",
+          "#CFCDCB",
+          "#F0EEEB"
+        ]
+      },
+      "limestone": {
+        "role": "neutral",
+        "displayName": "Limestone",
+        "canonical": "oklch(91.5% 0.006 85)",
+        "tonalRamp": [
+          "#0C0B08",
+          "#23211E",
+          "#3C3A37",
+          "#5F5D5A",
+          "#82807C",
+          "#A6A4A0",
+          "#CFCDC9",
+          "#F0EEEA"
+        ]
+      },
+      "hairline": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "oklch(88.0% 0.006 85)",
+        "tonalRamp": [
+          "#0C0B08",
+          "#23211E",
+          "#3C3A37",
+          "#5F5D5A",
+          "#82807C",
+          "#A6A4A0",
+          "#CFCDC9",
+          "#F0EEEA"
+        ]
+      },
+      "granite": {
+        "role": "neutral",
+        "displayName": "Granite",
+        "canonical": "oklch(60.0% 0.012 256)",
+        "tonalRamp": [
+          "#080B10",
+          "#1E2227",
+          "#363B41",
+          "#595E64",
+          "#7C8187",
+          "#A0A5AC",
+          "#C9CED6",
+          "#E9EFF7"
+        ]
+      },
+      "slate": {
+        "role": "neutral",
+        "displayName": "Slate",
+        "canonical": "oklch(47.0% 0.020 256)",
+        "tonalRamp": [
+          "#060B14",
+          "#1B222B",
+          "#343B45",
+          "#565E69",
+          "#79818C",
+          "#9DA5B1",
+          "#C5CFDB",
+          "#E6EFFC"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "oklch(25.5% 0.030 256)",
+        "tonalRamp": [
+          "#040B18",
+          "#182230",
+          "#303B4A",
+          "#535F6F",
+          "#758192",
+          "#99A6B8",
+          "#C1CFE2",
+          "#E2F0FF"
+        ]
+      },
+      "success": {
+        "role": "status",
+        "displayName": "Success",
+        "canonical": "oklch(48.0% 0.090 155)",
+        "tonalRamp": [
+          "#001400",
+          "#002D0C",
+          "#004824",
+          "#2C6C47",
+          "#519068",
+          "#75B68C",
+          "#9EE0B4",
+          "#BEFFD4"
+        ]
+      },
+      "warning": {
+        "role": "status",
+        "displayName": "Warning",
+        "canonical": "oklch(50.0% 0.100 70)",
+        "tonalRamp": [
+          "#220000",
+          "#3E1300",
+          "#5A2E00",
+          "#81520A",
+          "#A67537",
+          "#CD995C",
+          "#F8C384",
+          "#FFE3A4"
+        ]
+      },
+      "warning-fill": {
+        "role": "status",
+        "displayName": "Warning Fill",
+        "canonical": "oklch(88.0% 0.080 85)",
+        "tonalRamp": [
+          "#1A0500",
+          "#331D00",
+          "#4D3600",
+          "#725A21",
+          "#967D46",
+          "#BCA169",
+          "#E6CA91",
+          "#FFEBB1"
+        ]
+      },
+      "error": {
+        "role": "status",
+        "displayName": "Error",
+        "canonical": "oklch(51.0% 0.165 27)",
+        "tonalRamp": [
+          "#2D0000",
+          "#4C0000",
+          "#6C1614",
+          "#963E37",
+          "#BD6158",
+          "#E6867B",
+          "#FFAFA3",
+          "#FFCFC3"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Cover titles and single statements."
+      },
+      "h1": {
+        "displayName": "Headline",
+        "purpose": "Chapter and page titles."
+      },
+      "h2": {
+        "displayName": "Section",
+        "purpose": "Section titles."
+      },
+      "h3": {
+        "displayName": "Title",
+        "purpose": "Sub-sections."
+      },
+      "lead": {
+        "displayName": "Lead",
+        "purpose": "Opening paragraph, 38ch max."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Prose, 66ch max."
+      },
+      "ui": {
+        "displayName": "Interface",
+        "purpose": "Controls, forms."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Caps-tracked terms, four words max."
+      },
+      "caption-title": {
+        "displayName": "Caption title",
+        "purpose": "Wall-label italic title."
+      },
+      "price": {
+        "displayName": "Price",
+        "purpose": "The one number set in Caslon."
+      }
+    },
+    "shadows": [
+      {
+        "name": "lift",
+        "value": "0 1px 2px rgb(12 24 39 / .06), 0 10px 20px -12px rgb(12 24 39 / .2)",
+        "purpose": "Menus and popovers only."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(.16, 1, .3, 1)",
+        "purpose": "Everything that arrives."
+      },
+      {
+        "name": "ease-inout",
+        "value": "cubic-bezier(.65, 0, .35, 1)",
+        "purpose": "Map pans; things that move and stay."
+      },
+      {
+        "name": "dur-1",
+        "value": "160ms",
+        "purpose": "Hover, focus, color."
+      },
+      {
+        "name": "dur-2",
+        "value": "320ms",
+        "purpose": "Menus, panels, sheets."
+      },
+      {
+        "name": "dur-3",
+        "value": "640ms",
+        "purpose": "Title rise, rule draw."
+      },
+      {
+        "name": "dur-reveal",
+        "value": "1100ms",
+        "purpose": "One image reveal per view (clip-path inset)."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "400px"
+      },
+      {
+        "name": "md",
+        "value": "768px"
+      },
+      {
+        "name": "lg",
+        "value": "1024px"
+      },
+      {
+        "name": "xl",
+        "value": "1440px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The one main action per view.",
+      "html": "<button class=\"ds-btn\">Request a consultation</button>",
+      "css": ".ds-btn{background:#17283F;color:#FAFAF9;border:1px solid #17283F;border-radius:0;min-height:48px;padding:0 24px;font:600 .875rem/1 'Public Sans',system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;transition:background .16s}.ds-btn:hover{background:#273A54}.ds-btn:active{background:#0C1827}.ds-btn:focus-visible{outline:2px solid #7C532E;outline-offset:3px}"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Alternative action beside a primary.",
+      "html": "<button class=\"ds-btn2\">View listing</button>",
+      "css": ".ds-btn2{background:transparent;color:#0C1827;border:1px solid #0C1827;border-radius:0;min-height:48px;padding:0 24px;font:600 .875rem/1 'Public Sans',system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;transition:background .16s,color .16s}.ds-btn2:hover{background:#0C1827;color:#FAFAF9}.ds-btn2:focus-visible{outline:2px solid #7C532E;outline-offset:3px}"
+    },
+    {
+      "name": "Quiet Link Button",
+      "kind": "button",
+      "refersTo": "button-quiet",
+      "description": "Tertiary and reading actions.",
+      "html": "<a class=\"ds-quiet\" href=\"#\"><span>Read the selling guide</span></a>",
+      "css": ".ds-quiet{color:#0C1827;text-decoration:none;font:600 .875rem/1 'Public Sans',system-ui,sans-serif;letter-spacing:.06em;text-transform:uppercase}.ds-quiet span{border-bottom:1px solid #AD7E50;padding-bottom:3px}.ds-quiet:hover span{border-bottom-color:currentColor}.ds-quiet:focus-visible{outline:2px solid #7C532E;outline-offset:3px}"
+    },
+    {
+      "name": "Text Field",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Label above, hint before error.",
+      "html": "<label class=\"ds-field\"><span>Email</span><input class=\"ds-input\" placeholder=\"name@example.com\"></label>",
+      "css": ".ds-field{display:grid;gap:8px;font:600 .875rem/1.3 'Public Sans',system-ui,sans-serif;color:#0C1827}.ds-input{min-height:48px;padding:12px 16px;background:#fff;color:#192331;border:1px solid #7C8187;border-radius:0;font:400 1rem/1.4 'Public Sans',system-ui,sans-serif}.ds-input:hover{border-color:#0C1827}.ds-input:focus{outline:none;border-color:#0C1827;box-shadow:0 0 0 1px #0C1827,0 0 0 4px rgba(173,126,80,.35)}.ds-input::placeholder{color:#545C66}"
+    },
+    {
+      "name": "Filter Chip",
+      "kind": "chip",
+      "refersTo": "chip",
+      "description": "Applied filters, removable.",
+      "html": "<button class=\"ds-chip\" aria-pressed=\"true\">Multi-family</button>",
+      "css": ".ds-chip{min-height:36px;padding:0 16px;background:#fff;border:1px solid #E5E3DE;border-radius:0;font:500 .8125rem/1 'Public Sans',system-ui,sans-serif;color:#192331;cursor:pointer}.ds-chip:hover{border-color:#0C1827}.ds-chip[aria-pressed=true]{background:#E5EAF0;border-color:#4D5F77}.ds-chip:focus-visible{outline:2px solid #7C532E;outline-offset:3px}"
+    },
+    {
+      "name": "Property Card",
+      "kind": "card",
+      "refersTo": "property-status",
+      "description": "Catalogue entry for a listing.",
+      "html": "<article class=\"ds-prop\"><div class=\"ds-prop-img\"></div><div class=\"ds-prop-b\"><b>$689,000</b><i>41 Example Street, Worcester</i><small>3 units \u00b7 9 bd \u00b7 3 ba</small></div></article>",
+      "css": ".ds-prop{display:grid;width:300px}.ds-prop-img{aspect-ratio:4/3;background:#F4F2EF}.ds-prop-b{display:grid;gap:6px;margin-top:16px;padding-top:16px;border-top:1px solid #0C1827}.ds-prop-b b{font:400 1.75rem/1.1 'Libre Caslon Display',Georgia,serif;color:#0C1827}.ds-prop-b i{font:italic 400 1.0625rem/1.35 'Libre Caslon Text',Georgia,serif}.ds-prop-b small{font:500 .875rem/1.4 'Public Sans',system-ui,sans-serif;color:#545C66;font-variant-numeric:tabular-nums}"
+    },
+    {
+      "name": "Wall-label Caption",
+      "kind": "custom",
+      "refersTo": "caption-title",
+      "description": "Signature caption under every image.",
+      "html": "<figcaption class=\"ds-cap\"><span>Three-decker, Worcester</span><small>Built 1912 \u00b7 three units \u00b7 October 2026</small></figcaption>",
+      "css": ".ds-cap{display:grid;gap:2px;padding-top:12px;border-top:1px solid #D9D7D3;max-width:46ch}.ds-cap span{font:italic 400 1rem/1.35 'Libre Caslon Text',Georgia,serif;color:#0C1827}.ds-cap small{font:500 .875rem/1.45 'Public Sans',system-ui,sans-serif;color:#545C66}"
+    },
+    {
+      "name": "Primary Navigation",
+      "kind": "nav",
+      "refersTo": "nav",
+      "description": "Three audiences first, one filled action.",
+      "html": "<nav class=\"ds-nav\"><a aria-current=\"page\" href=\"#\">Buy</a><a href=\"#\">Sell</a><a href=\"#\">Invest</a><a href=\"#\">Communities</a></nav>",
+      "css": ".ds-nav{display:flex;gap:24px;font:500 .9375rem/1 'Public Sans',system-ui,sans-serif}.ds-nav a{color:#0C1827;text-decoration:none;padding-bottom:6px;border-bottom:1px solid transparent}.ds-nav a[aria-current=page],.ds-nav a:hover{border-bottom-color:#AD7E50}.ds-nav a:focus-visible{outline:2px solid #7C532E;outline-offset:3px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Gallery and the Catalogue",
+    "overview": "REWAP is presented the way a great auction house presents a collection: generous white walls, few works per room, and an exact caption beside each one. Authority comes from composition, precise language and sourced facts rather than ornament. Registry Navy does the work black usually does; bronze is a signature reserved for the mark and hairlines.",
+    "keyCharacteristics": [
+      "Near-neutral gallery white ground, never cream; navy-tinted ink, never pure black.",
+      "Caslon for the voice, Public Sans for facts with tabular figures.",
+      "Every image and listing carries a museum wall-label caption.",
+      "Square corners, 1 px rules, a single soft lift reserved for menus.",
+      "A three-column index margin; reading starts at column four."
+    ],
+    "rules": [
+      {
+        "name": "The Five Percent Rule",
+        "body": "Bronze covers under five percent of any view.",
+        "section": "colors"
+      },
+      {
+        "name": "The No Gold Rule",
+        "body": "Bronze is never pushed toward yellow gold, never metallic outside the logo, never fills a button.",
+        "section": "colors"
+      },
+      {
+        "name": "The Status-Only Rule",
+        "body": "Status colors appear only for status.",
+        "section": "colors"
+      },
+      {
+        "name": "The Two Voices Rule",
+        "body": "Caslon speaks; Public Sans states facts. A price is the one number set in Caslon.",
+        "section": "typography"
+      },
+      {
+        "name": "The Four Word Label Rule",
+        "body": "Caps-tracked labels never exceed four words and never sit above a heading.",
+        "section": "typography"
+      },
+      {
+        "name": "The One Lift Rule",
+        "body": "Only floating UI casts a shadow.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do use the logo exactly as supplied, from the vector masters, with one roof height of clear space.",
+      "Do caption every image like a wall label.",
+      "Do set numbers in tabular Public Sans and cite the source and date of every market figure.",
+      "Do present every Massachusetts region with equal standing.",
+      "Do label sample data and placeholders as such."
+    ],
+    "donts": [
+      "Don't use black with metallic gold, gradient text, glassmorphism or rounded oversized cards.",
+      "Don't place eyebrows or kickers above headings.",
+      "Don't use stock imagery of keys, handshakes, families on sofas or aerial subdivisions, or AI-generated homes or people.",
+      "Don't invent metrics, testimonials or awards.",
+      "Don't recolor an affiliated team's mark in REWAP colors or merge team and brokerage names."
+    ]
+  }
+}

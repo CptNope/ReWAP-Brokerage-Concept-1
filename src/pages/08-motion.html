@@ -1,0 +1,130 @@
+<!--
+title: Motion
+slug: motion
+num: 08
+description: REWAP motion language: architectural reveals, editorial transitions, restrained parallax, durations and easing tokens, and reduced-motion behaviour.
+-->
+<header class="opener">
+  <div class="wrap grid">
+    <p class="opener-num" aria-hidden="true">08</p>
+    <div class="opener-head">
+      <h1>Motion</h1>
+      <p class="lead">Motion behaves like light moving across a façade: slow to arrive, exact when it lands, and never the reason you looked.</p>
+    </div>
+    <div class="opener-aside"><ul class="toc-inline" aria-label="On this page">
+      <li><a href="#principles">Principles</a></li><li><a href="#vocabulary">Vocabulary</a></li><li><a href="#tokens">Tokens</a></li><li><a href="#limits">Limits</a></li><li><a href="#reduced">Reduced motion</a></li></ul></div>
+  </div>
+</header>
+
+<section class="section" id="principles" aria-labelledby="principles-h">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="code">8.1</span>
+      <h2 id="principles-h">Principles</h2>
+      <p>Content is always visible by default. Motion adds a moment of arrival; it never gates what a reader can see.</p>
+    </div>
+    <ul class="spec-list">
+      <li><b>One authored moment per view</b><span>The page’s main image or headline arrives; everything else is simply there. No identical fade on every section.</span></li>
+      <li><b>Exponential ease-out</b><span>Fast start, long settle. Nothing bounces, overshoots or springs.</span></li>
+      <li><b>Masks, not slides</b><span>Images reveal through a rising mask, the way a print is pulled from a frame. Elements do not fly in from the side.</span></li>
+      <li><b>Interface motion is short</b><span>Hover and state changes take 160 ms; panels and sheets 320 ms.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="section alt" id="vocabulary" aria-labelledby="vocabulary-h">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="code">8.2</span>
+      <h2 id="vocabulary-h">Vocabulary</h2>
+      <p>Three movements cover the site. Press replay to see each again.</p>
+    </div>
+    <div class="plates three">
+      <figure class="plate motion-demo">
+        <div class="motion-stage"><div id="d-mask" class="demo-mask" data-autoplay></div></div>
+        <figcaption class="caption" style="border:0;margin:0;padding:0"><span class="caption-title">Architectural reveal</span><span class="caption-meta">clip-path inset · 1100 ms · ease-out · hero images, plates</span></figcaption>
+        <button class="btn quiet small" type="button" data-replay="d-mask"><span>Replay</span></button>
+      </figure>
+      <figure class="plate motion-demo">
+        <div class="motion-stage"><p id="d-type" class="demo-type" data-autoplay><span>With&nbsp;clarity.</span></p></div>
+        <figcaption class="caption" style="border:0;margin:0;padding:0"><span class="caption-title">Typographic rise</span><span class="caption-meta">line rises inside its own mask · 640 ms · page titles only</span></figcaption>
+        <button class="btn quiet small" type="button" data-replay="d-type"><span>Replay</span></button>
+      </figure>
+      <figure class="plate motion-demo">
+        <div class="motion-stage"><div id="d-line" class="demo-line" data-autoplay></div></div>
+        <figcaption class="caption" style="border:0;margin:0;padding:0"><span class="caption-title">Rule draw</span><span class="caption-meta">1 px rule scales from the left · 640 ms · section openings, tables</span></figcaption>
+        <button class="btn quiet small" type="button" data-replay="d-line"><span>Replay</span></button>
+      </figure>
+    </div>
+    <ul class="spec-list mt-7">
+      <li><b>Page transitions</b><span>Cross-document view transitions where supported: the outgoing page fades to Gallery in 200 ms, the incoming title rises. Listing card images morph into the gallery hero.</span></li>
+      <li><b>Parallax</b><span>Only on full-bleed architectural photographs, at most 6% of the image height, and only when the image is taller than its frame. Never on text.</span></li>
+      <li><b>Map</b><span>Pans and zooms ease over 320 ms; the selected pin changes color instantly.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="section" id="tokens" aria-labelledby="tokens-h">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="code">8.3</span>
+      <h2 id="tokens-h">Tokens</h2>
+      <p>Two curves and four durations. Anything else needs a reason written beside it.</p>
+    </div>
+    <div class="dodont">
+      <figure class="plate"><div class="plate-ground light">
+        <svg class="curve" viewBox="0 0 320 220" role="img" aria-label="Ease-out curve: steep start, long gentle settle" style="max-width:24rem">
+          <path d="M20 200H300M20 200V20" stroke="#D9D7D3" fill="none"/>
+          <path d="M20 200C71 20 116 20 300 20" stroke="#17283F" stroke-width="2" fill="none"/>
+          <text x="24" y="16" font-family="Public Sans, sans-serif" font-size="11" font-weight="600" fill="#545C66" letter-spacing="1">PROGRESS</text>
+          <text x="300" y="214" text-anchor="end" font-family="Public Sans, sans-serif" font-size="11" font-weight="600" fill="#545C66" letter-spacing="1">TIME</text>
+        </svg></div>
+        <figcaption class="caption"><span class="caption-title">--ease-out</span><span class="caption-meta">cubic-bezier(.16, 1, .3, 1)</span></figcaption></figure>
+      <div class="scroll-x">
+        <table class="data-table">
+          <thead><tr><th scope="col">Token</th><th scope="col" class="r">Value</th><th scope="col">Use</th></tr></thead>
+          <tbody>
+            <tr><td><code>--dur-1</code></td><td class="r num">160 ms</td><td>Hover, focus, color changes</td></tr>
+            <tr><td><code>--dur-2</code></td><td class="r num">320 ms</td><td>Menus, filter panels, sheets, accordions</td></tr>
+            <tr><td><code>--dur-3</code></td><td class="r num">640 ms</td><td>Title rise, rule draw</td></tr>
+            <tr><td><code>--dur-reveal</code></td><td class="r num">1100 ms</td><td>Image reveal, one per view</td></tr>
+            <tr><td><code>--ease-out</code></td><td class="r"><code>.16, 1, .3, 1</code></td><td>Everything that arrives</td></tr>
+            <tr><td><code>--ease-inout</code></td><td class="r"><code>.65, 0, .35, 1</code></td><td>Things that move and stay (map pans)</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section alt" id="limits" aria-labelledby="limits-h">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="code">8.4</span>
+      <h2 id="limits-h">Never</h2>
+    </div>
+    <div class="scroll-x"><table class="pairs"><thead><tr><th scope="col">Never</th><th scope="col">Instead</th></tr></thead><tbody>
+      <tr><td>Bounce or spring</td><td>Exponential ease-out that settles.</td></tr>
+      <tr><td>Scroll-jacking</td><td>The reader’s scroll always moves the page by the amount they scrolled.</td></tr>
+      <tr><td>Fade-in on every block</td><td>One authored moment per view; the rest is present.</td></tr>
+      <tr><td>Floating cards, blobs, cursor trails</td><td>Stillness. The architecture is the interest.</td></tr>
+      <tr><td>Animated logo letters</td><td>The mark appears whole. It may fade in with the page; it never assembles.</td></tr>
+      <tr><td>Auto-advancing carousels</td><td>Galleries move only when the visitor moves them.</td></tr>
+    </tbody></table></div>
+  </div>
+</section>
+
+<section class="section" id="reduced" aria-labelledby="reduced-h">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="code">8.5</span>
+      <h2 id="reduced-h">Reduced motion</h2>
+      <p>When a visitor’s system asks for reduced motion, every duration token resolves to zero. Content appears in its final state; state changes still happen, instantly. The demos above follow this rule.</p>
+    </div>
+    <ul class="spec-list">
+      <li><b>CSS</b><span><code>@media (prefers-reduced-motion: reduce)</code> sets every <code>--dur-*</code> to 0 ms in tokens.css.</span></li>
+      <li><b>Script</b><span>Reveal classes are added only when motion is allowed and IntersectionObserver exists; without either, nothing is hidden.</span></li>
+      <li><b>Video</b><span>Never autoplays with motion preference set; poster frame shown with a play control.</span></li>
+    </ul>
+  </div>
+</section>
