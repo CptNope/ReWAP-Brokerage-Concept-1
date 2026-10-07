@@ -6,6 +6,17 @@ Phase 1 brand book for **REWAP Brokerage LLC** (652 Park Ave, Worcester, MA), pr
 
 Direction: the category standard for a top-tier brokerage, executed at gallery-and-catalogue craft (peer bar: Christie's International Real Estate). Fully independent from [Concept 2, The Massachusetts Atlas](https://cptnope.github.io/REWAP-Brokerage-Concept-2/).
 
+## Website concept (Phase 2)
+
+**Live:** https://cptnope.github.io/ReWAP-Brokerage-Concept-1/site/
+
+Built from the brand book: homepage, property search (map + list, live filters, clustered price pins), 25 listing detail pages, the Worcester community guide and The Oberdorfer Group team page under REWAP. Every listing, address, figure and MLS number is fictional sample data; towns and their positions are real.
+
+- Pages are generated into `site/` by `python3 tools/web/build_web.py` from `assets/data/listings.json` (made by `tools/web/make_data.py`) and `assets/data/ma-map.json`.
+- Map plates are drawn from U.S. Census county boundaries (`us-atlas`): `cd tools/web && npm i && node build_map.mjs`.
+- Site styles and behaviour: `assets/css/site.css`, `assets/js/site.js` (progressive enhancement; every page works without JavaScript).
+- Structured data on every page: RealEstateAgent, WebSite + SearchAction, Residence + Offer, BreadcrumbList, FAQPage, team Organization.
+
 ## Chapters
 
 | | Chapter | |

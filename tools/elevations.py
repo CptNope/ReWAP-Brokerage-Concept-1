@@ -73,3 +73,32 @@ b += rect(274, 290, 52, 6, 1)
 b += "".join(line(150, y, 450, y, .45, .5) for y in range(232, 360, 9))
 open(os.path.join(OUT, 'colonial.svg'), 'w').write(svg('Elevation drawing: center-chimney colonial', 600, 400, b))
 print('ok')
+
+# 4. Cape (one-and-a-half story, side gable, center door, dormers)
+b = ground(600, 360)
+b += '<path d="M140 270L230 196H370L460 270"/>' + line(134, 270, 466, 270, 2.2) + rect(156, 270, 288, 90)
+for x in (236, 330):
+    b += f'<path d="M{x} 222V204L{x+17} 190L{x+34} 204V222Z"/>' + window(x + 7, 206, 20, 16, (2, 1))
+b += rect(291, 178, 18, 20) + line(287, 178, 313, 178, 2)
+for x in (178, 222, 352, 396):
+    b += window(x, 290, 26, 40, (2, 3))
+b += rect(284, 286, 32, 74) + rect(278, 280, 44, 6, 1) + line(300, 286, 300, 360, .7)
+b += "".join(line(156, y, 444, y, .45, .5) for y in range(278, 360, 8))
+open(os.path.join(OUT, 'cape.svg'), 'w').write(svg('Elevation drawing: Cape house', 600, 400, b))
+
+# 5. Brick row house (three stories, bay, cornice, stoop)
+b = ground(600, 360)
+b += rect(190, 110, 220, 250) + line(180, 110, 420, 110, 3) + line(186, 118, 414, 118, 1) + "".join(line(x, 110, x, 118, .7) for x in range(196, 410, 12))
+b += '<path d="M290 360V150H404V360"/>'                       # bay
+for k, y in enumerate((150, 220, 290)):
+    b += line(290, y, 404, y, 1.2)
+    for x in (300, 334, 368):
+        if k == 2 and x == 300: continue
+        b += window(x, y + 12, 26, 46, (1, 2))
+for y in (140, 210):
+    b += window(214, y, 30, 48, (2, 2)) + f'<path d="M210 {y-4}H248" stroke-width="2"/>'
+b += rect(212, 290, 44, 70) + f'<path d="M208 290a26 14 0 0 1 52 0z"/>'   # door with transom
+b += rect(196, 344, 76, 8, 1) + rect(204, 336, 60, 8, 1)       # stoop
+b += "".join(line(190, y, 290, y, .4, .45) for y in range(126, 360, 7))
+open(os.path.join(OUT, 'rowhouse.svg'), 'w').write(svg('Elevation drawing: brick row house', 600, 400, b))
+print('ok2')

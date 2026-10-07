@@ -1,8 +1,8 @@
 /* REWAP Brokerage — Concept 1 design tokens.
    Source of truth: tools/palette.py (OKLCH). Hex values are the sRGB fallback. */
-@font-face { font-family: "Caslon Display"; src: url("../fonts/libre-caslon-display.woff2") format("woff2"); font-weight: 400; font-display: swap; }
-@font-face { font-family: "Caslon Text"; src: url("../fonts/libre-caslon-text-var.woff2") format("woff2"); font-weight: 400 700; font-display: swap; }
-@font-face { font-family: "Caslon Text"; src: url("../fonts/libre-caslon-text-italic-var.woff2") format("woff2"); font-weight: 400 700; font-style: italic; font-display: swap; }
+@font-face { font-family: "Libre Caslon Display"; src: url("../fonts/libre-caslon-display.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Libre Caslon Text"; src: url("../fonts/libre-caslon-text-var.woff2") format("woff2"); font-weight: 400 700; font-display: swap; }
+@font-face { font-family: "Libre Caslon Text"; src: url("../fonts/libre-caslon-text-italic-var.woff2") format("woff2"); font-weight: 400 700; font-style: italic; font-display: swap; }
 @font-face { font-family: "Public Sans"; src: url("../fonts/public-sans-var.woff2") format("woff2"); font-weight: 100 900; font-display: swap; }
 @font-face { font-family: "Public Sans"; src: url("../fonts/public-sans-italic-var.woff2") format("woff2"); font-weight: 100 900; font-style: italic; font-display: swap; }
 
@@ -53,8 +53,8 @@
   --focus-on-dark: var(--c-bronze-300);
 
   /* Type */
-  --font-display: "Caslon Display", "Libre Caslon Display", Georgia, serif;
-  --font-text: "Caslon Text", "Libre Caslon Text", Georgia, serif;
+  --font-display: "Libre Caslon Display", Georgia, serif;
+  --font-text: "Libre Caslon Text", Georgia, serif;
   --font-ui: "Public Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
   --fs-display: clamp(3rem, 1.9rem + 4.2vw, 6rem);
   --fs-h1: clamp(2.5rem, 1.75rem + 2.8vw, 4.25rem);
