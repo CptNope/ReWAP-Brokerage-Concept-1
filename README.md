@@ -28,9 +28,10 @@ Direction: the category standard for a top-tier brokerage, executed at gallery-a
 - `rewap-logo-flat.svg`, `rewap-logo-reversed.svg`, `rewap-logo-reversed-flat.svg`
 - `rewap-logo-mono-{navy,black,white,bronze}.svg` — one-color, with the house knocked out of the W
 - `derived/` — emblem, wordmark and favicon tile built only from parts of the existing mark, **pending approval**
+- `rewap-logo-sheet.svg` — every version on its approved ground in one sheet (PNG copy in `png/`)
 - `png/` — 2× PNG exports and app icons
 
-Geometry (rings, key, skyline, chevron, roof, windows) is rebuilt as exact shapes; the lettering is traced from the original, not replaced with a font. Regenerate with `python3 tools/logo/build_logo.py --retrace` (needs `pillow numpy scipy scikit-image potracer`). If the designer's native vector exists, it should replace the traced lettering.
+Geometry (rings, key, skyline, chevron, roof, windows) is rebuilt as exact shapes; the lettering is traced from the original, not replaced with a font. Regenerate with `python3 tools/logo/build_logo.py --retrace` (then `build_diagrams.py` and `build_sheet.py`) (needs `pillow numpy scipy scikit-image potracer`). If the designer's native vector exists, it should replace the traced lettering.
 
 ## Tokens
 
@@ -38,6 +39,7 @@ Geometry (rings, key, skyline, chevron, roof, windows) is rebuilt as exact shape
 - `tokens/tokens.json` — W3C design tokens
 - `tokens/theme.json` — WordPress block-theme draft
 - `DESIGN.md` + `.impeccable/design.json` — machine-readable design system record
+- `.impeccable/surfaces/` — the direction contract; `.impeccable/review/` — the review screenshots from the finish pass
 
 ## Building
 
